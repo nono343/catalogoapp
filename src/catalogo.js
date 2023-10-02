@@ -1,11 +1,7 @@
-import './App.css';
+// catalogo.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/navbar';
-import ScrollToTop from './components/scrollToTop';
-
-// Importa tus páginas aquí
-import Hero from './pages/hero';
+import { Route, Routes } from 'react-router-dom';
+import Hero from './pages/hero'; // Importa la página Hero aquí
 import Tomates from './pages/tomates';
 import Cherrys from './pages/cherrys';
 import Minivegetales from './pages/minivegetales';
@@ -14,22 +10,8 @@ import Tropicales from './pages/tropicales';
 import VGama from './pages/vGama';
 import Amela from './components/amela';
 
-function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Hero />} /> {/* Página Hero será la ruta raíz */}
-          <Route path="/catalogo/*" element={<Catalogo />} /> {/* Todas las rutas de /catalogo se manejarán en el componente Catalogo */}
-        </Routes>
-      </div>
-    </Router>
-  );
-}
 
-// Componente para rutas anidadas de "catalogo"
+
 function Catalogo() {
   return (
     <Routes>
@@ -45,4 +27,4 @@ function Catalogo() {
   );
 }
 
-export default App;
+export default Catalogo;
