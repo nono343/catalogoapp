@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import amela1 from '../assets/tomatedulce/amela/amela1.jpg';
-import fiesta from '/workspaces/codespaces-react/src/assets/fiesta/fiesta.jpg';
-import berenjena1 from '/workspaces/codespaces-react/src/assets/tradicional/berenjena/berenjena1.jpg';
-import tropicales from "/workspaces/codespaces-react/src/assets/tropicales/tropicales.jpg";
-import cherry from "/workspaces/codespaces-react/src/assets/cherry/cherry.jpg";
-import salmorejo from "/workspaces/codespaces-react/src/assets/salmorejo/salmorejo.jpg";
+import fiesta from '../assets/fiesta/fiesta.jpg';
+import berenjena1 from '../assets/tradicional/berenjena/berenjena1.jpg';
+import tropicales from '../assets/tropicales/tropicales.jpg';
+import cherry from '../assets/cherry/cherry.jpg';
+import salmorejo from '../assets/vgama/salmorejo/salmorejo.jpg';
 
 
 

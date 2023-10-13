@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom/dist';
-import CherryRedondo from "/workspaces/codespaces-react/src/components/cherryRedondo.jsx";
-import CherryPera from "/workspaces/codespaces-react/src/components/cherryPera.jsx"
+import TomatesTradicionalMarcas from '../components/tomatesTradicionalMarcas';
+import TomatesTradicional from '../components/tomatesTradicional';
+import TomatesNuevasTendencias from '../components/tomatesNuevasTendencias';
 
 function Tomates() {
     const location = useLocation();
@@ -11,10 +12,12 @@ function Tomates() {
       window.scrollTo(0, 0); // Desplazar hacia arriba al principio del componente
     }, [location.pathname]); // Detectar cambios en la ubicación
 
+
     return (
         <>
-        <CherryRedondo />
-        <CherryPera />
+        <TomatesNuevasTendencias/>
+        <TomatesTradicionalMarcas/>
+        <TomatesTradicional/>
         </>
     );
 }
