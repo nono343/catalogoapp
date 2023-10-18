@@ -12,10 +12,10 @@ function Tomates() {
     }, [location.pathname]); // Detectar cambios en la ubicación
 
     return (
-        <>
+        <div className='text-center'>
         <CherryRedondo />
         <CherryPera />
-        </>
+        </div>
     );
 }
 
