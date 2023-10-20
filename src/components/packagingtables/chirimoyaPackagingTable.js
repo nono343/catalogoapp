@@ -1,24 +1,52 @@
 import React, { useState } from 'react';
-import packaging1 from '../../assets/tradicional/corazonbuey/6.5kg.jpg';
+import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
 
 
-function CorazondebueyPackagingTable() {
+function ChirimoyaPackagingTable() {
     const [products, setProducts] = useState([
         {
-          Packaging: 'Loose',
-          Presentation: '1',
-          'Presentation Weight (g)': '6500',
-          'Net Weight (kg)': '6.5',
-          'Box size': '60*40*9.7',
-          '80x120': '88',
-          'Net Weight 80x120 (Kg)': '572',
-          '100x120': '110',
-          'Net Weight 100x120 (Kg)': '715',
-          Image: packaging1,
+            Packaging: 'Loose',
+            Presentation: '1',
+            'Pieces': '10/12/14',
+            'Presentation Weight (g)': '4000',
+            'Net Weight (kg)': '4',
+            'Box size': '40*30*10',
+            '80x120': '168',
+            'Net Weight 80x120 (Kg)': '672',
+            '100x120': '210',
+            'Net Weight 100x120 (Kg)': '840',
+            Image: amela1,
         },
-      ]);
-      
-                            
+        {
+            Packaging: 'Loose',
+            Presentation: '1',
+            'Pieces': '8/9',
+            'Presentation Weight (g)': '4000',
+            'Net Weight (kg)': '6',
+            'Box size': '40*30*12',
+            '80x120': '136',
+            'Net Weight 80x120 (Kg)': '544',
+            '100x120': '170',
+            'Net Weight 100x120 (Kg)': '680',
+            Image: amela1,
+        },
+        {
+            Packaging: 'Loose',
+            Presentation: '1',
+            'Pieces': '4/5/6/7',
+            'Presentation Weight (g)': '4000',
+            'Net Weight (kg)': '6',
+            'Box size': '40*30*14',
+            '80x120': '128',
+            'Net Weight 80x120 (Kg)': '512',
+            '100x120': '160',
+            'Net Weight 100x120 (Kg)': '640',
+            Image: amela1,
+        },
+
+
+    ]);
+    
     
     const [sortOrder, setSortOrder] = useState('asc');
 
@@ -158,4 +186,4 @@ function CorazondebueyPackagingTable() {
     );
 }
 
-export default CorazondebueyPackagingTable;
+export default ChirimoyaPackagingTable;

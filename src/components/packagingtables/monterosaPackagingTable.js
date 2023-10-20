@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/monterosa/6kg.jpg';
 
 
 function MonterosaPackagingTable() {
@@ -14,7 +14,7 @@ function MonterosaPackagingTable() {
           'Net Weight 80x120 (Kg)': '528',
           '100x120': '110',
           'Net Weight 100x120 (Kg)': '660',
-          Image: amela1,
+          Image: packaging1,
         },
       ]);
                     

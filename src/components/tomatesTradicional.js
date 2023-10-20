@@ -33,7 +33,7 @@ function TomatesTradicional() {
                     {cards.map((card) => (
                         <Link
                             key={card.nombre}
-                            to={`/catalogo/tomates/tradicionales/comoditys/${card.nombre.toLowerCase().replace(/ /g, '_')}`}
+                            to={`/tomates/tradicionales/comoditys/${card.nombre.toLowerCase().replace(/ /g, '_')}`}
                             className="group space-y-1 border border-gray-100 dark:border-gray-700 rounded-3xl bg-white dark:bg-gray-800 px-8 py-12 text-center shadow-2xl shadow-gray-600/10 dark:shadow-none transition-transform transform hover:scale-105"
                         >
                             <img className="mx-auto w-120" src={card.imagen} alt="illustration" loading="lazy" />

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/antociano/3kg.jpg';
+import packaging2 from '../../assets/tradicional/antociano/3kgmadera.jpg';
+
 
 
 function AntocianoPackagingTable() {
@@ -14,7 +16,7 @@ function AntocianoPackagingTable() {
           'Net Weight 80x120 (Kg)': '672',
           '100x120': '280',
           'Net Weight 100x120 (Kg)': '840',
-          Image: amela1,
+          Image: packaging1,
         },
         {
           Packaging: 'Loose wooden box',
@@ -26,7 +28,7 @@ function AntocianoPackagingTable() {
           'Net Weight 80x120 (Kg)': '528',
           '100x120': '220',
           'Net Weight 100x120 (Kg)': '660',
-          Image: amela1, // Reemplaza 'amela2' con la referencia real de la imagen.
+          Image: packaging2, // Reemplaza 'amela2' con la referencia real de la imagen.
         },
       ]);
           

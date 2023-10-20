@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
-import packaging1 from '../../assets/tradicional/corazonbuey/6.5kg.jpg';
+import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
 
 
-function CorazondebueyPackagingTable() {
+function CaviarCitricoPackagingTable() {
     const [products, setProducts] = useState([
         {
-          Packaging: 'Loose',
-          Presentation: '1',
-          'Presentation Weight (g)': '6500',
-          'Net Weight (kg)': '6.5',
-          'Box size': '60*40*9.7',
-          '80x120': '88',
-          'Net Weight 80x120 (Kg)': '572',
-          '100x120': '110',
-          'Net Weight 100x120 (Kg)': '715',
-          Image: packaging1,
-        },
-      ]);
-      
-                            
+            Packaging: 'Punnet with lid',
+            Presentation: '6',
+            'Presentation Weight (g)': '200',
+            'Net Weight (kg)': '1.2',
+            'Box size': '40*30*7',
+            '80x120': '248',
+            'Net Weight 80x120 (Kg)': '298',
+            '100x120': '310',
+            'Net Weight 100x120 (Kg)': '372',
+            Image: amela1, // Puedes reemplazar 'amela7' con la información de tu imagen
+          }
+    ]);
+    
     
     const [sortOrder, setSortOrder] = useState('asc');
 
@@ -158,4 +157,4 @@ function CorazondebueyPackagingTable() {
     );
 }
 
-export default CorazondebueyPackagingTable;
+export default CaviarCitricoPackagingTable;

@@ -32,22 +32,22 @@ export default function Navbar() {
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
 
-                    <Link to="/catalogo/tomates" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/tomates" className="text-sm font-semibold leading-6 text-gray-900">
                         Tomates
                     </Link>
-                    <Link to="/catalogo/cherrys" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/cherrys" className="text-sm font-semibold leading-6 text-gray-900">
                         Cherrys
                     </Link>
-                    <Link to="/catalogo/minivegetales" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/minivegetales" className="text-sm font-semibold leading-6 text-gray-900">
                         Minivegetales
                     </Link>
-                    <Link to="/catalogo/tradicionales" href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/tradicionales" className="text-sm font-semibold leading-6 text-gray-900">
                         Verdura tradicional
                     </Link>
-                    <Link to="/catalogo/tropicales" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/tropicales" className="text-sm font-semibold leading-6 text-gray-900">
                         Tropicales
                     </Link>
-                    <Link to="/catalogo/VGama" href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/VGama" className="text-sm font-semibold leading-6 text-gray-900">
                         V Gama
                     </Link>
 
@@ -57,14 +57,14 @@ export default function Navbar() {
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <div className="-m-1.5 p-1.5">
                             <span className="sr-only">Granada La Palma SCA</span>
                             <img
                                 className="h-8 w-auto"
                                 src={logo1}
                                 alt=""
                             />
-                        </a>
+                        </div>
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"

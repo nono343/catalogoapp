@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
-
+import packaging1 from '../../assets/tomatedulce/dulcextra/350g.jpg';
+import packaging2 from '../../assets/tomatedulce/dulcextra/1kg.jpg';
 
 function DulceextraPackagingTable() {
     const [products, setProducts] = useState([
@@ -14,8 +14,7 @@ function DulceextraPackagingTable() {
             'Net Weight 80x120 (Kg)': '521',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '651',
-            Image: amela1,
-
+            Image: packaging1,
         },
         {
             Packaging: 'Loose',
@@ -27,12 +26,13 @@ function DulceextraPackagingTable() {
             'Net Weight 80x120 (Kg)': '0',
             '100x120': '',
             'Net Weight 100x120 (Kg)': '0',
-            Image: amela1,
-
+            Image: packaging2,
         },
+        // Agrega más objetos de producto según sea necesario
     ]);
-    
+
     const [sortOrder, setSortOrder] = useState('asc');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const handleSort = (column) => {
         if (sortOrder === 'asc') {
@@ -66,15 +66,36 @@ function DulceextraPackagingTable() {
         setShowLargeImage(false);
     };
 
+    const filteredProducts = products.filter((product) =>
+        product.Packaging.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
-        <section className=" body-font  mb-5 max-w-screen-2xl mx-auto">
+        <section className="body-font mb-5 max-w-screen-2xl mx-auto">
             <h1 className="sm:text-3xl text-center text-2xl mb-5">Formatos de venta</h1>
+
+            <form className="mb-3">
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input 
+                    type="search" 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    id="packaging-search" 
+                    class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Buscar formato de venta" 
+                    required/>
+                        {/* <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> */}
+                </div>
+            </form>
+
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    {/* <caption className="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                        Our products
-                        <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
-                    </caption> */}
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
@@ -101,17 +122,16 @@ function DulceextraPackagingTable() {
                             <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('100x120')}>
                                 100x120
                             </th>
-                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 80x120 (Kg)')}>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 100x120 (Kg)')}>
                                 Net Weight (Kg)
                             </th>
-
                             <th scope="col" className="px-4 sm:px-6 py-3">
                                 Image
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map((product, index) => (
+                        {filteredProducts.map((product, index) => (
                             <tr key={index} className={`bg-white border-b ${index % 2 === 0 ? 'dark:bg-gray-800' : 'dark:border-gray-700'}`}>
                                 <th scope="row" className="px-4 sm:px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {product.Packaging}
@@ -140,7 +160,6 @@ function DulceextraPackagingTable() {
                                 <td className="px-4 sm:px-6 py-4">
                                     {product['Net Weight 100x120 (Kg)']}
                                 </td>
-
                                 <td className="px-4 sm:px-6 py-4">
                                     <img
                                         src={product.Image}
@@ -154,6 +173,7 @@ function DulceextraPackagingTable() {
                     </tbody>
                 </table>
             </div>
+
             {showLargeImage && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
                     <div className="relative z-10">

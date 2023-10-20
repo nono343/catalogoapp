@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/primora/300g.jpg';
+import packaging2 from '../../assets/tradicional/primora/400g.jpg';
+import packaging3 from '../../assets/tradicional/primora/3kg.jpg';
 
 
 function PrimoraPackagingTable() {
@@ -14,7 +16,7 @@ function PrimoraPackagingTable() {
           'Net Weight 80x120 (Kg)': '595',
           '100x120': '310',
           'Net Weight 100x120 (Kg)': '744',
-          Image: amela1,
+          Image: packaging1,
         },
         {
           Packaging: 'Wooden punnet with flowpack',
@@ -26,7 +28,7 @@ function PrimoraPackagingTable() {
           'Net Weight 80x120 (Kg)': '248',
           '100x120': '155',
           'Net Weight 100x120 (Kg)': '310',
-          Image: amela1, // Replace 'amela2' with the actual image reference.
+          Image: packaging2, // Replace 'amela2' with the actual image reference.
         },
         {
           Packaging: 'Loose',
@@ -38,7 +40,7 @@ function PrimoraPackagingTable() {
           'Net Weight 80x120 (Kg)': '0',
           '100x120': '',
           'Net Weight 100x120 (Kg)': '0',
-          Image: amela1, // Replace 'amela3' with the actual image reference.
+          Image: packaging3, // Replace 'amela3' with the actual image reference.
         },
       ]);
                 

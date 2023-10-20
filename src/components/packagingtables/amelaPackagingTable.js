@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tomatedulce/amela/160g.jpg';
+import packaging2 from '../../assets/tomatedulce/amela/280g.jpg';
+import packaging3 from '../../assets/tomatedulce/amela/350g.jpg';
+import packaging4 from '../../assets/tomatedulce/amela/1kg.jpg';
 
 
 function AmelaPackagingTable() {
@@ -14,7 +17,7 @@ function AmelaPackagingTable() {
             'Net Weight 80x120 (Kg)': '476',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '595',
-            Image: amela1,
+            Image: packaging1,
 
         },
         {
@@ -27,7 +30,7 @@ function AmelaPackagingTable() {
             'Net Weight 80x120 (Kg)': '417',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '521',
-            Image: amela1,
+            Image: packaging2,
 
         },
         {
@@ -40,7 +43,7 @@ function AmelaPackagingTable() {
             'Net Weight 80x120 (Kg)': '521',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '651',
-            Image: amela1,
+            Image: packaging3,
 
         },
         {
@@ -53,7 +56,7 @@ function AmelaPackagingTable() {
             'Net Weight 80x120 (Kg)': '0',
             '100x120': '',
             'Net Weight 100x120 (Kg)': '0',
-            Image: amela1,
+            Image: packaging4,
 
         },
     ]);

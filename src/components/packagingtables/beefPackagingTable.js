@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/beef/gg.jpg';
 
 
 function BeefPackagingTable() {
@@ -14,7 +14,7 @@ function BeefPackagingTable() {
           'Net Weight 80x120 (Kg)': '440',
           '100x120': '110',
           'Net Weight 100x120 (Kg)': '550',
-          Image: amela1,
+          Image: packaging1,
         },
         {
           Packaging: 'Loose',
@@ -26,7 +26,7 @@ function BeefPackagingTable() {
           'Net Weight 80x120 (Kg)': '1620',
           '100x120': '324',
           'Net Weight 100x120 (Kg)': '1944',
-          Image: amela1, // Reemplaza 'amela2' con la referencia real de la imagen.
+          Image: packaging1, // Reemplaza 'amela2' con la referencia real de la imagen.
         },
         {
           Packaging: 'Loose',
@@ -38,7 +38,7 @@ function BeefPackagingTable() {
           'Net Weight 80x120 (Kg)': '528',
           '100x120': '110',
           'Net Weight 100x120 (Kg)': '660',
-          Image: amela1, // Reemplaza 'amela3' con la referencia real de la imagen.
+          Image: packaging1, // Reemplaza 'amela3' con la referencia real de la imagen.
         },
       ]);
                             

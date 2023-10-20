@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/melange/1.25kg.jpg';
+import packaging2 from '../../assets/tradicional/melange/3.4kg madera.jpg';
 
 
 function MelangePackagingTable() {
@@ -14,7 +15,7 @@ function MelangePackagingTable() {
           'Net Weight 80x120 (Kg)': '468',
           '100x120': '130',
           'Net Weight 100x120 (Kg)': '585',
-          Image: amela1,
+          Image: packaging1,
         },
         {
           Packaging: 'Loose',
@@ -26,7 +27,7 @@ function MelangePackagingTable() {
           'Net Weight 80x120 (Kg)': '240',
           '100x120': '395',
           'Net Weight 100x120 (Kg)': '395',
-          Image: amela1, // Reemplaza 'amela2' con la referencia real de la imagen.
+          Image: packaging1, // Reemplaza 'amela2' con la referencia real de la imagen.
         },
         {
           Packaging: 'Loose wooden box',
@@ -38,7 +39,7 @@ function MelangePackagingTable() {
           'Net Weight 80x120 (Kg)': '598',
           '100x120': '220',
           'Net Weight 100x120 (Kg)': '748',
-          Image: amela1, // Reemplaza 'amela3' con la referencia real de la imagen.
+          Image: packaging2, // Reemplaza 'amela3' con la referencia real de la imagen.
         },
       ]);
                 

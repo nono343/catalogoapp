@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom/dist';
+import React, { useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import mycubies from '../assets/minivegetales/mycubies/mycubies.jpg';
 import tribelli from '../assets/minivegetales/tribelli/tribelli.jpg';
 import { Link } from 'react-router-dom';
-
 
 function Minivegetales() {
     const cards = [
@@ -18,15 +17,15 @@ function Minivegetales() {
     ];
 
     const location = useLocation();
-
-    // Utiliza useEffect para detectar cambios en la ubicación y desplazar hacia arriba
     useEffect(() => {
         window.scrollTo(0, 0); // Desplazar hacia arriba al principio del componente
     }, [location.pathname]); // Detectar cambios en la ubicación
 
+
     return (
-        <div className="relative text-center py-16">
-            <div className="container relative m-auto px-6 text-gray-500 md:px-12">
+
+        <div className="container relative m-auto px-6 text-gray-500 md:px-12">
+            <div className="relative text-center py-16">
                 <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
                     Minivegetales
                 </h2>
@@ -46,7 +45,6 @@ function Minivegetales() {
                 </div>
             </div>
         </div>
-
     );
 }
 

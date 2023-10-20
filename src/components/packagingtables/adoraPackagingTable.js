@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/adora/300g.jpg';
+import packaging2 from '../../assets/tradicional/adora/3kg.jpg';
 
 
 function AdoraPackagingTable() {
@@ -14,7 +15,7 @@ function AdoraPackagingTable() {
             'Net Weight 80x120 (Kg)': '595',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '744',
-            Image: amela1,
+            Image: packaging1,
         },
         {
             Packaging: 'Cardboard with flowpack',
@@ -26,7 +27,7 @@ function AdoraPackagingTable() {
             'Net Weight 80x120 (Kg)': '595',
             '100x120': '310',
             'Net Weight 100x120 (Kg)': '744',
-            Image: amela1,
+            Image: packaging1,
         },
         {
             Packaging: 'Loose',
@@ -38,7 +39,7 @@ function AdoraPackagingTable() {
             'Net Weight 80x120 (Kg)': '0',
             '100x120': '',
             'Net Weight 100x120 (Kg)': '0',
-            Image: amela1,
+            Image: packaging2,
         },
     ]);
     

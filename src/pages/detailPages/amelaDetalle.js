@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, {useEffect} from "react";
 import { Carousel } from "@material-tailwind/react";
 import { useLocation } from "react-router-dom";
 import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
@@ -7,11 +7,10 @@ import AmelaPackagingTable from "../../components/packagingtables/amelaPackaging
 
 function AmelaDetalle() {
     const location = useLocation();
-
-    // Utiliza useEffect para detectar cambios en la ubicación y desplazar hacia arriba
     useEffect(() => {
-      window.scrollTo(0, 0); // Desplazar hacia arriba al principio del componente
+        window.scrollTo(0, 0); // Desplazar hacia arriba al principio del componente
     }, [location.pathname]); // Detectar cambios en la ubicación
+
 
     return (
         <div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+import packaging1 from '../../assets/tradicional/chocmato/400g.jpg';
+import packaging2 from '../../assets/tradicional/chocmato/3kg.jpg';
 
 
 function ChocmatoPackagingTable() {
@@ -14,7 +15,7 @@ function ChocmatoPackagingTable() {
           'Net Weight 80x120 (Kg)': '499',
           '100x120': '260',
           'Net Weight 100x120 (Kg)': '624',
-          Image: amela1,
+          Image: packaging1,
         },
         {
           Packaging: 'Loose',
@@ -26,7 +27,7 @@ function ChocmatoPackagingTable() {
           'Net Weight 80x120 (Kg)': '0',
           '100x120': '',
           'Net Weight 100x120 (Kg)': '0',
-          Image: amela1,
+          Image: packaging2,
         },
       ]);
           
