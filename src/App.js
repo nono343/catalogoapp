@@ -11,16 +11,9 @@ import Tradicionales from './pages/tradicionales';
 import Tropicales from './pages/tropicales';
 import VGama from './pages/vGama';
 import CherryDetalle from './pages/detailPages/cherryDetalle';
-import AmelaDetalle from './pages/detailPages/amelaDetalle';
-import DulcextraDetalle from './pages/detailPages/dulcextraDetalle';
-import TomatesTradicionalMarcasDetalle from './pages/detailPages/tomatesTradicionalMarcasDetalle';
-import TomatesTradicionalComoditysDetalle from './pages/detailPages/tomatesTradicionalComoditysDetalle';
+import TomatesDetalle from './pages/detailPages/tomatesDetalle';
 import MinivegetalesDetalle from './pages/detailPages/minivegetalesDetalle';
 import VerduraTradicionalDetalle from './pages/detailPages/verduraTradicionalDetalle';
-import AguacateDetalle from './pages/detailPages/aguacateDetalle';
-import MangoDetalle from './pages/detailPages/mangoDetalle';
-import PitahayaDetalle from './pages/detailPages/pitahayaDetalle';
-import OtrasVariedadesDetalle from './pages/detailPages/otrasVariedadesDetalle';
 
 
 import amela from './assets/tomatedulce/amela/amela2.jpg';
@@ -75,115 +68,117 @@ import blanca from './assets/pitahayas/blanca/blanca.jpg';
 import chirimoya from './assets/otrasvariedades/chirimoya/chirimoya.jpg';
 import caviarcitrico from './assets/otrasvariedades/caviarcitrico/caviarcitrico.jpg';
 import nispora from './assets/otrasvariedades/nispora/nispora.jpg';
+import TropicalesDetalle from './pages/detailPages/tropicalesDetalle';
 
 const imageMappings = {
-  '/catalogo/tomates/nuevastendencias/amela': amela,
-  '/catalogo/tomates/nuevastendencias/dulcextra': dulcextra,
-  '/catalogo/tomates/tradicionales/marcas/adora': adora,
-  '/catalogo/tomates/tradicionales/marcas/primora': primora,
-  '/catalogo/tomates/tradicionales/marcas/chocmato': chocmato,
-  '/catalogo/tomates/tradicionales/marcas/monterosa': monterosa,
-  '/catalogo/tomates/tradicionales/marcas/murice': murice,
-  '/catalogo/tomates/tradicionales/comoditys/beef': beef,
-  '/catalogo/tomates/tradicionales/comoditys/pera': pera,
-  '/catalogo/tomates/tradicionales/comoditys/corazon_de_buey': corazonbuey,
-  '/catalogo/tomates/tradicionales/comoditys/melange': melange,
-  '/catalogo/cherrys/redondo/amarillo': redondoamarillo,
-  '/catalogo/cherrys/redondo/rojo': redondorojo,
+  '/tomates/amela': amela,
+  '/tomates/dulcextra': dulcextra,
+  '/tomates/adora': adora,
+  '/tomates/primora': primora,
+  '/tomates/chocmato': chocmato,
+  '/tomates/monterosa': monterosa,
+  '/tomates/murice': murice,
+  '/tomates/beef': beef,
+  '/tomates/pera': pera,
+  '/tomates/corazon_de_buey': corazonbuey,
+  '/tomates/melange': melange,
 
-  '/catalogo/cherrys/pera/amarillo': peraamarillo,
-  '/catalogo/cherrys/pera/angelle': peraangelle,
-  '/catalogo/cherrys/pera/chocolate': perachocolate,
-  '/catalogo/cherrys/pera/fresa': perafresa,
-  '/catalogo/cherrys/pera/naranja': peranaranja,
-  '/catalogo/cherrys/pera/peppermato': perapeppermato,
+  '/cherrys/redondo_amarillo': redondoamarillo,
+  '/cherrys/redondo_rojo': redondorojo,
 
-  '/catalogo/minivegetales/pepino_cocktail_mycubies': mycubies,
-  '/catalogo/minivegetales/minipimientos_tribelli': tribelli,
+  '/cherrys/pera_amarillo': peraamarillo,
+  '/cherrys/pera_angelle': peraangelle,
+  '/cherrys/pera_chocolate': perachocolate,
+  '/cherrys/pera_fresa': perafresa,
+  '/cherrys/pera_naranja': peranaranja,
+  '/cherrys/pera_peppermato': perapeppermato,
 
-  '/catalogo/tradicionales/berenjena_japonesa': berenjena,
-  '/catalogo/tradicionales/pimiento_sweet_palermo': pimientossweetpalermo,
-  '/catalogo/minivegetales/pimiento_lamuyo': pimientolamuyo,
-  '/catalogo/minivegetales/pimiento_padron': pimientopadron,
-  '/catalogo/minivegetales/pimientos_picantes': pimientospicantes,
-  '/catalogo/minivegetales/calabacin_redondo': calabacinredondo,
-  '/catalogo/minivegetales/calabacin_alargado': calabacinalargado,
+  '/minivegetales/pepino_cocktail_mycubies': mycubies,
+  '/minivegetales/minipimientos_tribelli': tribelli,
 
-  '/catalogo/tropicales/aguacate/bacon': bacon,
-  '/catalogo/tropicales/aguacate/hass': hass,
-  '/catalogo/tropicales/aguacate/fuerte': fuerte,
-  '/catalogo/tropicales/aguacate/pinkerton': pinkerton,
+  '/tradicionales/berenjena_japonesa': berenjena,
+  '/tradicionales/pimiento_sweet_palermo': pimientossweetpalermo,
+  '/minivegetales/pimiento_lamuyo': pimientolamuyo,
+  '/minivegetales/pimiento_padron': pimientopadron,
+  '/minivegetales/pimientos_picantes': pimientospicantes,
+  '/minivegetales/calabacin_redondo': calabacinredondo,
+  '/minivegetales/calabacin_alargado': calabacinalargado,
+
+  '/tropicales/aguacate_bacon': bacon,
+  '/tropicales/aguacate_hass': hass,
+  '/tropicales/aguacate_fuerte': fuerte,
+  '/tropicales/aguacate_pinkerton': pinkerton,
 
 
-  '/catalogo/tropicales/mango/osteen': osteen,
-  '/catalogo/tropicales/mango/irwin': irwin,
-  '/catalogo/tropicales/mango/keitt': keitt,
-  '/catalogo/tropicales/mango/miniirwin': miniirwin,
+  '/tropicales/mango_osteen': osteen,
+  '/tropicales/mango_irwin': irwin,
+  '/tropicales/mango_keitt': keitt,
+  '/tropicales/mango_miniirwin': miniirwin,
 
-  '/catalogo/tropicales/pitahaya/purpura': purpura,
-  '/catalogo/tropicales/pitahaya/rosa': rosa,
-  '/catalogo/tropicales/pitahaya/blanca': blanca,
+  '/tropicales/pitahaya_purpura': purpura,
+  '/tropicales/pitahaya_rosa': rosa,
+  '/tropicales/pitahaya_blanca': blanca,
 
-  '/catalogo/tropicales/otrasvariedades/chirimoya_fino_de_jete': chirimoya,
-  '/catalogo/tropicales/otrasvariedades/caviar_cítrico': caviarcitrico,
-  '/catalogo/tropicales/otrasvariedades/nispora': nispora,
+  '/tropicales/chirimoya_fino_de_jete': chirimoya,
+  '/tropicales/caviar_cítrico': caviarcitrico,
+  '/tropicales/nispora': nispora,
   // Agrega más rutas e imágenes según tus necesidades
 };
 
 function App() {
 
   const allRoutes = useMemo(() => [
-    { label: 'Tomate Amela', path: '/catalogo/tomates/nuevastendencias/amela' },
-    { label: 'Tomate Dulcextra', path: '/catalogo/tomates/nuevastendencias/dulcextra' },
-    { label: 'Tomate Adora', path: '/catalogo/tomates/tradicionales/marcas/adora' },
-    { label: 'Tomate Primora', path: '/catalogo/tomates/tradicionales/marcas/primora' },
-    { label: 'Tomate Chocmato', path: '/catalogo/tomates/tradicionales/marcas/chocmato' },
-    { label: 'Tomate Monterosa', path: '/catalogo/tomates/tradicionales/marcas/monterosa' },
-    { label: 'Tomate Murice', path: '/catalogo/tomates/tradicionales/marcas/murice' },
-    { label: 'Tomate Beef', path: '/catalogo/tomates/tradicionales/comoditys/beef' },
-    { label: 'Tomate Pera', path: '/catalogo/tomates/tradicionales/comoditys/pera' },
-    { label: 'Tomate Corazon De Buey', path: '/catalogo/tomates/tradicionales/comoditys/corazon_de_buey' },
-    { label: 'Tomate Melange', path: '/catalogo/tomates/tradicionales/comoditys/melange' },
+    { label: 'Tomate Amela', path: '/tomates/amela' },
+    { label: 'Tomate Dulcextra', path: '/tomates/dulcextra' },
+    { label: 'Tomate Adora', path: '/tomates/adora' },
+    { label: 'Tomate Primora', path: '/tomates/primora' },
+    { label: 'Tomate Chocmato', path: '/tomates/chocmato' },
+    { label: 'Tomate Monterosa', path: '/tomates/monterosa' },
+    { label: 'Tomate Murice', path: '/tomates/murice' },
+    { label: 'Tomate Beef', path: '/tomates/beef' },
+    { label: 'Tomate Pera', path: '/tomates/pera' },
+    { label: 'Tomate Corazon De Buey', path: '/tomates/corazon_de_buey' },
+    { label: 'Tomate Melange', path: '/tomates/melange' },
 
-    { label: 'Cherry Redondo Amarillo', path: '/catalogo/cherrys/redondo/amarillo' },
-    { label: 'Cherry Redondo Rojo', path: '/catalogo/cherrys/redondo/rojo' },
+    { label: 'Cherry Redondo Amarillo', path: '/cherrys/redondo_amarillo' },
+    { label: 'Cherry Redondo Rojo', path: '/cherrys/redondo_rojo' },
 
-    { label: 'Cherry Pera Amarillo', path: '/catalogo/cherrys/pera/amarillo' },
-    { label: 'Cherry Pera Angelle', path: '/catalogo/cherrys/pera/angelle' },
-    { label: 'Cherry Pera Chocolate', path: '/catalogo/cherrys/pera/chocolate' },
-    { label: 'Cherry Pera Fresa', path: '/catalogo/cherrys/pera/fresa' },
-    { label: 'Cherry Pera Naranja', path: '/catalogo/cherrys/pera/naranja' },
-    { label: 'Cherry Pera Peppermato', path: '/catalogo/cherrys/pera/peppermato' },
+    { label: 'Cherry Pera Amarillo', path: '/cherrys/pera_amarillo' },
+    { label: 'Cherry Pera Angelle', path: '/cherrys/pera_angelle' },
+    { label: 'Cherry Pera Chocolate', path: '/cherrys/pera_chocolate' },
+    { label: 'Cherry Pera Fresa', path: '/cherrys/pera_fresa' },
+    { label: 'Cherry Pera Naranja', path: '/cherrys/pera_naranja' },
+    { label: 'Cherry Pera Peppermato', path: '/cherrys/pera_peppermato' },
 
-    { label: 'Pepino Cocktail Mycubies', path: '/catalogo/minivegetales/pepino_cocktail_mycubies' },
-    { label: 'Minipimientos Tribelli', path: '/catalogo/minivegetales/minipimientos_tribelli' },
+    { label: 'Pepino Cocktail Mycubies', path: '/minivegetales/pepino_cocktail_mycubies' },
+    { label: 'Minipimientos Tribelli', path: '/minivegetales/minipimientos_tribelli' },
 
-    { label: 'Berenjena Japonesa', path: '/catalogo/tradicionales/berenjena_japonesa' },
-    { label: 'Pimiento Sweet Palermo', path: '/catalogo/tradicionales/pimiento_sweet_palermo' },
-    { label: 'Pimiento Lamuyo', path: '/catalogo/minivegetales/pimiento_lamuyo' },
-    { label: 'Pimiento Padrón', path: '/catalogo/minivegetales/pimiento_padron' },
-    { label: 'Pimientos Picantes', path: '/catalogo/minivegetales/pimientos_picantes' },
-    { label: 'Calabacín Redondo', path: '/catalogo/minivegetales/calabacin_redondo' },
-    { label: 'Calabacín Alargado', path: '/catalogo/minivegetales/calabacin_alargado' },
+    { label: 'Berenjena Japonesa', path: '/tradicionales/berenjena_japonesa' },
+    { label: 'Pimiento Sweet Palermo', path: '/tradicionales/pimiento_sweet_palermo' },
+    { label: 'Pimiento Lamuyo', path: '/minivegetales/pimiento_lamuyo' },
+    { label: 'Pimiento Padrón', path: '/minivegetales/pimiento_padron' },
+    { label: 'Pimientos Picantes', path: '/minivegetales/pimientos_picantes' },
+    { label: 'Calabacín Redondo', path: '/minivegetales/calabacin_redondo' },
+    { label: 'Calabacín Alargado', path: '/minivegetales/calabacin_alargado' },
 
-    { label: 'Aguacate Bacon', path: '/catalogo/tropicales/aguacate/bacon' },
-    { label: 'Aguacate Hass', path: '/catalogo/tropicales/aguacate/hass' },
-    { label: 'Aguacate Fuerte', path: '/catalogo/tropicales/aguacate/fuerte' },
-    { label: 'Aguacate Pinkerton', path: '/catalogo/tropicales/aguacate/pinkerton' },
+    { label: 'Aguacate Bacon', path: '/tropicales/aguacate_bacon' },
+    { label: 'Aguacate Hass', path: '/tropicales/aguacate_hass' },
+    { label: 'Aguacate Fuerte', path: '/tropicales/aguacate_fuerte' },
+    { label: 'Aguacate Pinkerton', path: '/tropicales/aguacate_pinkerton' },
 
 
-    { label: 'Mango Osteen', path: '/catalogo/tropicales/mango/osteen' },
-    { label: 'Mango Irwin', path: '/catalogo/tropicales/mango/irwin' },
-    { label: 'Mango Keitt', path: '/catalogo/tropicales/mango/keitt' },
-    { label: 'Mango Miniirwin', path: '/catalogo/tropicales/mango/miniirwin' },
+    { label: 'Mango Osteen', path: '/tropicales/mango_osteen' },
+    { label: 'Mango Irwin', path: '/tropicales/mango_irwin' },
+    { label: 'Mango Keitt', path: '/tropicales/mango_keitt' },
+    { label: 'Mango Miniirwin', path: '/tropicales/mango_miniirwin' },
 
-    { label: 'Pitahaya Púrpura', path: '/catalogo/tropicales/pitahaya/purpura' },
-    { label: 'Pitahaya Rosa', path: '/catalogo/tropicales/pitahaya/rosa' },
-    { label: 'Pitahaya Blanca', path: '/catalogo/tropicales/pitahaya/blanca' },
+    { label: 'Pitahaya Púrpura', path: '/tropicales/pitahaya_purpura' },
+    { label: 'Pitahaya Rosa', path: '/tropicales/pitahaya_rosa' },
+    { label: 'Pitahaya Blanca', path: '/tropicales/pitahaya_blanca' },
 
-    { label: 'Chirimoya Fino De Jete', path: '/catalogo/tropicales/otrasvariedades/chirimoya_fino_de_jete' },
-    { label: 'Caviar Cítrico', path: '/catalogo/tropicales/otrasvariedades/caviar_cítrico' },
-    { label: 'Níspora', path: '/catalogo/tropicales/otrasvariedades/nispora' },
+    { label: 'Chirimoya Fino De Jete', path: '/tropicales/chirimoya_fino_de_jete' },
+    { label: 'Caviar Cítrico', path: '/tropicales/caviar_cítrico' },
+    { label: 'Níspora', path: '/tropicales/nispora' },
     // Agrega más rutas aquí
   ], []);
 
@@ -242,13 +237,19 @@ function App() {
     };
   }, []);
 
+  const [isSpanish, setIsSpanish] = useState(true);
+
+  // Función para cambiar el idioma
+  const toggleLanguage = () => {
+    setIsSpanish(!isSpanish);
+  };
 
 
   return (
     <Router>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <div className="App max-w-screen-2xl mx-auto">
-        <Navbar />
+        <Navbar isSpanish={isSpanish} toggleLanguage={toggleLanguage} />
         <div ref={searchRef}>
           <Search
             searchHandler={handleSearch}
@@ -259,7 +260,7 @@ function App() {
 
           {searchQuery && (
             <div className="container mt-5 relative m-auto px-6 text-gray-500 md:px-12">
-              <div className="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-4">
+              <div className="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-3 animate-fade-down">
                 {searchResults.map((route) => (
                   <div
                     key={route.path}
@@ -268,16 +269,15 @@ function App() {
                     ref={cardRef} // Agregar la referencia al "card" del buscador
                   >
                     <Link to={route.path}>
-
                       {imageMappings[route.path] && (
                         <img
-                          className="mx-auto w-120" // Ajusta el ancho según tus necesidades
+                          className="mx-auto w-120 " // Ajusta el ancho según tus necesidades
                           src={imageMappings[route.path]}
                           alt="illustration"
                           loading="lazy"
                         />
                       )}
-                      <h3 className="text-4xl font-semibold text-gray-800 dark:text-white">{route.label}</h3>
+                      <h3 className="text-3xl font-semibold text-gray-800 dark:text-white">{route.label}</h3>
                     </Link>
                   </div>
                 ))}
@@ -288,24 +288,19 @@ function App() {
 
         {!searchQuery && (
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={<Hero isSpanish={isSpanish} toggleLanguage={toggleLanguage} />} />
             <Route path="/tomates/*" element={<Tomates />} />
             <Route path="/cherrys/*" element={<Cherrys />} />
             <Route path="/minivegetales/*" element={<Minivegetales />} />
             <Route path="/tradicionales/*" element={<Tradicionales />} />
             <Route path="/tropicales/*" element={<Tropicales />} />
             <Route path="/vgama" element={<VGama />} />
-            <Route path="/tomates/nuevastendencias/amela" element={<AmelaDetalle />} />
-            <Route path="/tomates/nuevastendencias/dulcextra" element={<DulcextraDetalle />} />
-            <Route path="/tomates/tradicionales/marcas/:nombreCard" element={<TomatesTradicionalMarcasDetalle />} />
-            <Route path="/tomates/tradicionales/comoditys/:nombreCard" element={<TomatesTradicionalComoditysDetalle />} />
+            <Route path="/tomates/:nombreCard" element={<TomatesDetalle />} />
+            {/* <Route path="/tomates/:nombreCard" element={<TomatesTradicionalComoditysDetalle />} /> */}
             <Route path="/minivegetales/:nombreCard" element={<MinivegetalesDetalle />} />
             <Route path="/cherrys/:nombreCard" element={<CherryDetalle />} />
             <Route path="/tradicionales/:nombreCard" element={<VerduraTradicionalDetalle />} />
-            <Route path="/tropicales/aguacate/:nombreCard" element={<AguacateDetalle />} />
-            <Route path="/tropicales/mango/:nombreCard" element={<MangoDetalle />} />
-            <Route path="/tropicales/pitahaya/:nombreCard" element={<PitahayaDetalle />} />
-            <Route path="/tropicales/otrasvariedades/:nombreCard" element={<OtrasVariedadesDetalle />} />
+            <Route path="/tropicales/:nombreCard" element={<TropicalesDetalle />} />
           </Routes>
         )}
       </div>

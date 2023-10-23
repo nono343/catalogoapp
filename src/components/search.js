@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Input } from "@material-tailwind/react";
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 const Search = ({ searchHandler }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,23 +19,23 @@ const Search = ({ searchHandler }) => {
   };
 
   return (
-    <div className='container max-w-screen-md relative m-auto text-center px-6 text-gray-500 md:px-12 mb-5'>
+    <div className='container max-w-screen-sm relative m-auto text-center px-6 text-gray-500 md:px-12 mb-5 animate-fade-right'>
       <div className="relative">
-        <input
+        <Input
+          color="red" 
+          label="Buscar productos..."
           type="text"
-          placeholder="Buscar productos..."
           value={searchQuery}
           onChange={handleSearchChange}
-          className="w-full px-4 py-2 border border-gray-100 dark:border-gray-700 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
         {searchQuery && (
           <button
-            onClick={clearSearch}
-            className="absolute top-0 right-0 m-2 text-gray-500 hover:text-red-500"
-          >
-            Borrar
-          </button>
-        )}
+          onClick={clearSearch}
+          className="absolute top-0 right-0 m-2 text-gray-500 hover:text-red-500"
+        >
+          <XMarkIcon className="w-5 h-5" />
+        </button>
+      )}
       </div>
     </div>
   );

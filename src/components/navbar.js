@@ -1,25 +1,29 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom/dist'
 import { Dialog, Popover } from '@headlessui/react'
-import {
-    Bars3Icon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
 import logo1 from "../assets/logos/logo1.png"
+import { Switch } from '@material-tailwind/react'
 
 
-export default function Navbar() {
+export default function Navbar({ isSpanish, toggleLanguage }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+    // Función para cambiar el idioma en función del estado del Switch
     return (
         <header className="bg-white">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 animate-fade-right" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Granada La Palma SCA</span>
                         <img className="h-8 w-auto" src={logo1} alt="" />
                     </Link>
                 </div>
+                <Switch
+                    checked={isSpanish}
+                    label={isSpanish ? <span>ES</span> : <span>GB</span>}
+                    onChange={toggleLanguage}
+                />
                 <div className="flex lg:hidden">
                     <button
                         type="button"
@@ -33,7 +37,7 @@ export default function Navbar() {
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
 
                     <Link to="/tomates" className="text-sm font-semibold leading-6 text-gray-900">
-                        Tomates
+                        {isSpanish ? 'Tomates' : 'Tomatoes'}
                     </Link>
                     <Link to="/cherrys" className="text-sm font-semibold leading-6 text-gray-900">
                         Cherrys
@@ -80,7 +84,7 @@ export default function Navbar() {
                                 <Link
                                     to="/catalogo/tomates"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
+                                    onClick={() => setMobileMenuOpen(false)}
 
                                 >
                                     Tomates
@@ -88,31 +92,28 @@ export default function Navbar() {
                                 <Link
                                     to="/catalogo/cherrys"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
-
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Cherrys
                                 </Link>
                                 <Link
                                     to="/catalogo/minivegetales"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
-
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Minivegetales
                                 </Link>
                                 <Link
                                     to="/catalogo/tradicionales"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
-
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Tradicionales
                                 </Link>
                                 <Link
                                     to="/catalogo/tropicales"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
+                                    onClick={() => setMobileMenuOpen(false)}
 
                                 >
                                     Tropicales
@@ -120,7 +121,7 @@ export default function Navbar() {
                                 <Link
                                     to="/catalogo/VGama"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)} // Agrega este onClick
+                                    onClick={() => setMobileMenuOpen(false)}
 
                                 >
                                     V Gama
