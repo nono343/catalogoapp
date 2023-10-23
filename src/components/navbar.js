@@ -19,11 +19,6 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                         <img className="h-8 w-auto" src={logo1} alt="" />
                     </Link>
                 </div>
-                <Switch
-                    checked={isSpanish}
-                    label={isSpanish ? <span>ES</span> : <span>GB</span>}
-                    onChange={toggleLanguage}
-                />
                 <div className="flex lg:hidden">
                     <button
                         type="button"
@@ -34,29 +29,42 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <Popover.Group className="hidden lg:flex lg:gap-x-12">
+                <Popover.Group className="hidden lg:flex lg:gap-x-12 mr-10">
 
                     <Link to="/tomates" className="text-sm font-semibold leading-6 text-gray-900">
                         {isSpanish ? 'Tomates' : 'Tomatoes'}
                     </Link>
                     <Link to="/cherrys" className="text-sm font-semibold leading-6 text-gray-900">
-                        Cherrys
+                        {isSpanish ? 'Cherrys' : 'Cherries'}
+
                     </Link>
                     <Link to="/minivegetales" className="text-sm font-semibold leading-6 text-gray-900">
-                        Minivegetales
+                        {isSpanish ? 'Minivegetales' : 'Mini Vegeteables'}
+
                     </Link>
                     <Link to="/tradicionales" className="text-sm font-semibold leading-6 text-gray-900">
-                        Verdura tradicional
+                        {isSpanish ? 'Tradicionales' : 'Traditionals'}
+
                     </Link>
                     <Link to="/tropicales" className="text-sm font-semibold leading-6 text-gray-900">
-                        Tropicales
+                        {isSpanish ? 'Tropicales' : 'Tropical Fruits'}
+
                     </Link>
                     <Link to="/VGama" className="text-sm font-semibold leading-6 text-gray-900">
-                        V Gama
+                        {isSpanish ? 'V Gama' : 'V Range'}
+
                     </Link>
 
                 </Popover.Group>
+                <Switch
+                        color='red'
+                        checked={isSpanish}
+                        label={isSpanish ? <span>ES</span> : <span>GB</span>}
+                        onChange={toggleLanguage}
+                    />
+
             </nav>
+
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -69,6 +77,7 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                                 alt=""
                             />
                         </div>
+
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -77,8 +86,10 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                             <span className="sr-only">Close menu</span>
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
+                        
                     </div>
                     <div className="mt-6 flow-root">
+                        
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 <Link
@@ -87,28 +98,32 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                                     onClick={() => setMobileMenuOpen(false)}
 
                                 >
-                                    Tomates
+                                    {isSpanish ? 'Tomates' : 'Tomatoes'}
+
                                 </Link>
                                 <Link
                                     to="/catalogo/cherrys"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Cherrys
+                                    {isSpanish ? 'Cherrys' : 'Cherries'}
+
                                 </Link>
                                 <Link
                                     to="/catalogo/minivegetales"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Minivegetales
+                                    {isSpanish ? 'Minivegetales' : 'Mini Vegeteables'}
+
                                 </Link>
                                 <Link
                                     to="/catalogo/tradicionales"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Tradicionales
+                                    {isSpanish ? 'Tradicionales' : 'Traditionals'}
+
                                 </Link>
                                 <Link
                                     to="/catalogo/tropicales"
@@ -116,7 +131,8 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                                     onClick={() => setMobileMenuOpen(false)}
 
                                 >
-                                    Tropicales
+                                    {isSpanish ? 'Tropicales' : 'Tropicals'}
+
                                 </Link>
                                 <Link
                                     to="/catalogo/VGama"
@@ -124,7 +140,7 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                                     onClick={() => setMobileMenuOpen(false)}
 
                                 >
-                                    V Gama
+                                    {isSpanish ? 'V Gama' : 'V Range'}
                                 </Link>
 
                             </div>

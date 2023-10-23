@@ -252,6 +252,7 @@ function App() {
         <Navbar isSpanish={isSpanish} toggleLanguage={toggleLanguage} />
         <div ref={searchRef}>
           <Search
+          isSpanish={isSpanish}
             searchHandler={handleSearch}
             allRoutes={allRoutes}
             value={searchQuery} // Asigna el valor del input a searchQuery
@@ -289,18 +290,18 @@ function App() {
         {!searchQuery && (
           <Routes>
             <Route path="/" element={<Hero isSpanish={isSpanish} toggleLanguage={toggleLanguage} />} />
-            <Route path="/tomates/*" element={<Tomates />} />
-            <Route path="/cherrys/*" element={<Cherrys />} />
-            <Route path="/minivegetales/*" element={<Minivegetales />} />
-            <Route path="/tradicionales/*" element={<Tradicionales />} />
-            <Route path="/tropicales/*" element={<Tropicales />} />
-            <Route path="/vgama" element={<VGama />} />
-            <Route path="/tomates/:nombreCard" element={<TomatesDetalle />} />
+            <Route path="/tomates/*" element={<Tomates isSpanish={isSpanish} />} />
+            <Route path="/cherrys/*" element={<Cherrys isSpanish={isSpanish}/>} />
+            <Route path="/minivegetales/*" element={<Minivegetales isSpanish={isSpanish}/>} />
+            <Route path="/tradicionales/*" element={<Tradicionales isSpanish={isSpanish}/>} />
+            <Route path="/tropicales/*" element={<Tropicales isSpanish={isSpanish} />} />
+            <Route path="/vgama" element={<VGama isSpanish={isSpanish} />} />
+            <Route path="/tomates/:nombreCard" element={<TomatesDetalle isSpanish={isSpanish}/>} />
             {/* <Route path="/tomates/:nombreCard" element={<TomatesTradicionalComoditysDetalle />} /> */}
-            <Route path="/minivegetales/:nombreCard" element={<MinivegetalesDetalle />} />
-            <Route path="/cherrys/:nombreCard" element={<CherryDetalle />} />
-            <Route path="/tradicionales/:nombreCard" element={<VerduraTradicionalDetalle />} />
-            <Route path="/tropicales/:nombreCard" element={<TropicalesDetalle />} />
+            <Route path="/minivegetales/:nombreCard" element={<MinivegetalesDetalle isSpanish={isSpanish} />} />
+            <Route path="/cherrys/:nombreCard" element={<CherryDetalle isSpanish={isSpanish}/>} />
+            <Route path="/tradicionales/:nombreCard" element={<VerduraTradicionalDetalle isSpanish={isSpanish}/>} />
+            <Route path="/tropicales/:nombreCard" element={<TropicalesDetalle isSpanish={isSpanish}/>} />
           </Routes>
         )}
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input } from "@material-tailwind/react";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
-const Search = ({ searchHandler }) => {
+const Search = ({ searchHandler, isSpanish }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Maneja la búsqueda en tiempo real
@@ -23,7 +23,8 @@ const Search = ({ searchHandler }) => {
       <div className="relative">
         <Input
           color="red" 
-          label="Buscar productos..."
+          label= {isSpanish ? "Buscar productos.." : "Search products..."}
+
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
