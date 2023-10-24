@@ -66,7 +66,7 @@ function TomatesDetalle({ isSpanish }) {
       )}
 
       {/* Render the packaging table based on nombreCard */}
-      {nombreCard === 'amela' && <AmelaPackagingTable />}
+      {nombreCard === 'amela' && <AmelaPackagingTable isSpanish={isSpanish}/>}
       {nombreCard === 'dulcextra' && <DulceextraPackagingTable />}
       {nombreCard === 'adora' && <AdoraPackagingTable />}
       {nombreCard === 'primora' && <PrimoraPackagingTable />}
