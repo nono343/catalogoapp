@@ -39,7 +39,6 @@ function AmelaPackagingTable({ isSpanish }) {
 
     const [showLargeImage, setShowLargeImage] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleImageClick = (imageLarge) => {
@@ -55,6 +54,11 @@ function AmelaPackagingTable({ isSpanish }) {
     const clearSearch = () => {
         setSearchTerm('');
     };
+
+    const filteredRows = TABLE_ROWS.filter((row) => {
+        // Realiza el filtrado por término de búsqueda en la propiedad "packaging".
+        return row.packaging.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     return (
         <section className="body-font mb-5 max-w-screen-2xl mx-auto">
@@ -85,7 +89,7 @@ function AmelaPackagingTable({ isSpanish }) {
                 <div className="relative">
                     <Input
                         color="red"
-                        label= {isSpanish ? "Buscar formatos de venta..." : "Search selling formats..."}
+                        label={isSpanish ? "Buscar formatos de venta..." : "Search selling formats..."}
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -93,7 +97,7 @@ function AmelaPackagingTable({ isSpanish }) {
                     {searchTerm && (
                         <button
                             onClick={clearSearch}
-                            className="absolute top-0 right-0 m-2 text-gray-500 hover:text-red-500"
+                            className="absolute top-0 right-0 m-2 text-gray-500 hover-text-red-500"
                         >
                             <XMarkIcon className="w-5 h-5" />
                         </button>
@@ -120,8 +124,8 @@ function AmelaPackagingTable({ isSpanish }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {TABLE_ROWS.map(({ packaging, imageSmall, imageLarge, isEnlarged, presentation, presentationWeight, netWeight, size80120, weight80120, size100120 }, index) => {
-                                const isLast = index === TABLE_ROWS.length - 1;
+                            {filteredRows.map(({ packaging, imageSmall, imageLarge, isEnlarged, presentation, presentationWeight, netWeight, size80120, weight80120, size100120 }, index) => {
+                                const isLast = index === filteredRows.length - 1;
                                 const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
                                 return (
@@ -169,7 +173,6 @@ function AmelaPackagingTable({ isSpanish }) {
                                                 onClick={() => handleImageClick(imageLarge)}
                                             />}
                                         </td>
-
                                     </tr>
                                 );
                             })}
