@@ -10,7 +10,7 @@ function AmelaPackagingTable({ isSpanish }) {
         : ["Packaging", "Presentation (units/box)", "Presentation Weight (g)", "Net Weight (kg)", "80x120 (boxes/palet)", "80x120 Net Weight (kg)", "100x120 (boxes/palet)", "Image"];
 
     const TABLE_ROWS = [
-        { amela:{
+        {
             packaging: isSpanish ? "Embalaje" : "Packaging",
             presentation: isSpanish ? "Presentación (unidades/caja)" : "Presentation (units/box)",
             presentationWeight: isSpanish ? "Peso de Presentación (g)" : "Presentation Weight (g)",
@@ -21,10 +21,9 @@ function AmelaPackagingTable({ isSpanish }) {
             imageSmall: amela1, // Imagen pequeña en la tabla
             imageLarge: amela1, // URL de la imagen grande
             isEnlarged: false, // Estado de ampliación inicialmente en falso
-        }
         },
         {
-           dulcextra:{ packaging: isSpanish ? "Antonio" : "Pepe",
+            packaging: isSpanish ? "Antonio" : "Pepe",
             presentation: isSpanish ? "Presentación (unidades/caja)" : "Presentation (units/box)",
             presentationWeight: isSpanish ? "Peso de Presentación (g)" : "Presentation Weight (g)",
             netWeight: isSpanish ? "Peso Neto (kg)" : "Net Weight (kg)",
@@ -34,7 +33,7 @@ function AmelaPackagingTable({ isSpanish }) {
             imageSmall: amela1, // Imagen pequeña en la tabla
             imageLarge: amela1, // URL de la imagen grande
             isEnlarged: false, // Estado de ampliación inicialmente en falso
-         } },
+        },
         // Agrega más filas según sea necesario
     ];
 
