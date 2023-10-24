@@ -2,14 +2,13 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom/dist'
 import { Dialog, Popover } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
-import logo1 from "../assets/logos/logo1.png"
 import { Switch } from '@material-tailwind/react'
+import logo1 from "../assets/logos/logo1.png"
 
 
 export default function Navbar({ isSpanish, toggleLanguage }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    // Función para cambiar el idioma en función del estado del Switch
     return (
         <header className="bg-white">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 animate-fade-right" aria-label="Global">
@@ -39,7 +38,7 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
 
                     </Link>
                     <Link to="/minivegetales" className="text-sm font-semibold leading-6 text-gray-900">
-                        {isSpanish ? 'Minivegetales' : 'Mini Vegeteables'}
+                        {isSpanish ? 'Minivegetales' : 'Mini Vegetables'}
 
                     </Link>
                     <Link to="/tradicionales" className="text-sm font-semibold leading-6 text-gray-900">
