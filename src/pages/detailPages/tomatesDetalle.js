@@ -53,20 +53,20 @@ function TomatesDetalle({ isSpanish }) {
             {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
           </h1>
           <div className="flex justify-center max-w-screen-md mx-auto">
-            {productionSchedule.map((item, index) => (
-              <a
-                key={index}
-                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600`}
-              >
-                {index + 1}
-              </a>
-            ))}
+          {productionSchedule.map((item, index) => (
+  <a
+    key={index}
+    className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
+  >
+    {index + 1}
+  </a>
+))}
           </div>
         </div>
       )}
 
       {/* Render the packaging table based on nombreCard */}
-      {nombreCard === 'amela' && <AmelaPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'amela' && <AmelaPackagingTable isSpanish={isSpanish} />}
       {nombreCard === 'dulcextra' && <DulceextraPackagingTable />}
       {nombreCard === 'adora' && <AdoraPackagingTable />}
       {nombreCard === 'primora' && <PrimoraPackagingTable />}
