@@ -29,3 +29,9 @@
 .small {
   font-size: 0.75rem;
 }
+
+/* Estilos para eliminar completamente la indicación de enfoque */
+input[type="search"]:focus {
+  outline: none;
+  border: none;
+}

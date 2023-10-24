@@ -20,7 +20,7 @@
     "@adobe/css-tools": "^4.3.1"
   },
   "scripts": {
-    "start": "BROWSER=none WDS_SOCKET_PORT=0 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +46,11 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.30",
+<<<<<<< HEAD
     "tailwindcss": "^3.3.3"
+=======
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animated": "^1.0.1"
+>>>>>>> codespace-stunning-xylophone-j6vwgwpjqgphq9qv
   }
 }

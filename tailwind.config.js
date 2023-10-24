@@ -8,5 +8,11 @@ module.exports = withMT({
   theme: {
     extend: {},
   },
+<<<<<<< HEAD
   plugins: [],
+=======
+  plugins: [
+    require('tailwindcss-animated')
+  ],
+>>>>>>> codespace-stunning-xylophone-j6vwgwpjqgphq9qv
 });

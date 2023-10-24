@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
+=======
+@tailwind utilities;
+
+/* Estilos para eliminar completamente la indicación de enfoque */
+input[type="search"]:focus {
+    outline: none;
+    border: none;
+}
+>>>>>>> codespace-stunning-xylophone-j6vwgwpjqgphq9qv
