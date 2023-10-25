@@ -4,6 +4,10 @@ import { Dialog, Popover } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline'
 import { Switch } from '@material-tailwind/react'
 import logo1 from "../assets/logos/logo1.png"
+import { Gb } from "react-flags-select";
+import { Es } from "react-flags-select";
+
+
 
 
 export default function Navbar({ isSpanish, toggleLanguage }) {
@@ -56,12 +60,15 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
 
                 </Popover.Group>
                 <Switch
-                        color='red'
-                        checked={isSpanish}
-                        label={isSpanish ? <span>ES</span> : <span>GB</span>}
-                        onChange={toggleLanguage}
-                    />
-
+    color='red'
+    checked={isSpanish}
+    label={
+        isSpanish ? 
+        <span style={{ fontSize: '35px' }}><Es/></span> : 
+        <span style={{ fontSize: '35px' }}><Gb/></span>
+    }
+    onChange={toggleLanguage}
+/>
             </nav>
 
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

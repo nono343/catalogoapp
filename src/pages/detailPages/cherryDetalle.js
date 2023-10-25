@@ -20,20 +20,31 @@ function CherryDetalle({ isSpanish }) {
     return (
         <div>
             <section className="text-gray-600 body-font">
+            <h1 className="title-font sm:text-4xl text-center text-3xl mb-4 font-medium text-gray-900">
+                           Cherry {cardName}     
+
+                        </h1>
+
                 <div className="container mx-auto flex px-5 md:flex-row flex-col items-center">
-                    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 animate-fade-right">
+                  
+                    <div className="lg:max-w-lg lg:w-full md:w-1/3 w-5/6 mb-10 md:mb-0 animate-fade-right">
                         <img
                             src={image}
                             alt={nombreCard}
                             className="h-full w-full object-cover"
                         />
                     </div>
-                    <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center animate-fade-left">
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                            {cardName}
-                        </h1>
+                    <div className="lg:flex-grow md:w-1/3 flex flex-col md:items-start md:text-left items-center text-center animate-fade-left">
                         <p className="mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: descripcion }}></p>
                     </div>
+                    <div className="lg:max-w-lg lg:w-full md:w-1/3 w-5/6 mb-10 md:mb-0 animate-fade-right">
+                        <img
+                            src={image}
+                            alt={nombreCard}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+
                 </div>
             </section>
 
@@ -57,7 +68,7 @@ function CherryDetalle({ isSpanish }) {
       
                   <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
             </div>
-            <CherryPackagingTable />
+            <CherryPackagingTable isSpanish={isSpanish}/>
         </div>
     );
 }
