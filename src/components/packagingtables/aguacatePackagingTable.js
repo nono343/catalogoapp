@@ -1,40 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@material-tailwind/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
 
 
-function AguacatePackagingTable() {
-    const [products, setProducts] = useState([
-        {
-            Packaging: 'Loose',
-            Presentation: '1',
-            'Pieces': '8/10/12/14/16/18/20/22/24',
-            'Presentation Weight (g)': '4000',
-            'Net Weight (kg)': '4',
-            'Box size': '40*30*10',
-            '80x120': '168',
-            'Net Weight 80x120 (Kg)': '672',
-            '100x120': '210',
-            'Net Weight 100x120 (Kg)': '840',
-            Image: amela1,
-        },
-        {
-            Packaging: 'Loose',
-            Presentation: '1',
-            'Pieces': '26/28',
-            'Presentation Weight (g)': '6000',
-            'Net Weight (kg)': '6',
-            'Box size': '40*30*14',
-            '80x120': '128',
-            'Net Weight 80x120 (Kg)': '768',
-            '100x120': '160',
-            'Net Weight 100x120 (Kg)': '960',
-            Image: amela1,
-        },
+function AguacatePackagingTable({isSpanish}) {
+    const [products, setProducts] = useState([]);
 
-    ]);
-    
+    useEffect(() => {
+        // Use the isSpanish prop to set the packaging information
+
+        const newProducts = [
+            {
+                'Packaging': isSpanish ? 'Granel' : 'Loose',
+                'Presentation': '1',
+                'Pieces': '8/10/12/14/16/18/20/22/24',
+                'Presentation Weight (g)': '4000',
+                'Net Weight (kg)': '4',
+                'Box size': '40*30*10',
+                '80x120': '168',
+                'Net Weight 80x120 (Kg)': '672',
+                '100x120': '210',
+                'Net Weight 100x120 (Kg)': '840',
+                Image: amela1, // Assuming amela1 is an imported image
+            },
+            {
+                'Packaging': 'Loose',
+                'Presentation': '1',
+                'Pieces': '26/28',
+                'Presentation Weight (g)': '6000',
+                'Net Weight (kg)': '6',
+                'Box size': '40*30*14',
+                '80x120': '128',
+                'Net Weight 80x120 (Kg)': '768',
+                '100x120': '160',
+                'Net Weight 100x120 (Kg)': '960',
+                Image: amela1,
+            },
+            // Add more product objects here
+        ];
+
+        // Update the state with the new products
+        setProducts(newProducts);
+    }, [isSpanish]);
+
     
     const [sortOrder, setSortOrder] = useState('asc');
 
@@ -107,40 +116,40 @@ function AguacatePackagingTable() {
 
         <div className="relative overflow-x-auto shadow-md rounded-lg animate-fade-up">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
-                            Packaging
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation')}>
-                            Presentation
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation Weight (g)')}>
-                            Presentation Weight (g)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight (kg)')}>
-                            Net Weight (kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Box size')}>
-                            Box size
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('80x120')}>
-                            80x120
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 80x120 (Kg)')}>
-                            Net Weight (Kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('100x120')}>
-                            100x120
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 100x120 (Kg)')}>
-                            Net Weight (Kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3">
-                            Image
-                        </th>
-                    </tr>
-                </thead>
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
+                                {isSpanish ? "Embalaje" : "Packaging"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation')}>
+                                {isSpanish ? "Formato" : "Presentation"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation Weight (g)')}>
+                                {isSpanish ? "Peso del formato" : "Presentation Weight (g)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight (kg)')}>
+                                {isSpanish ? "Peso neto (kg)" : "Net Weight (kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Box size')}>
+                                {isSpanish ? "Medidas caja" : "Box size"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('80x120')}>
+                                {isSpanish ? "80x120 Cajas/Palet" : "80x120 Boxes/Palet"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 80x120 (Kg)')}>
+                                {isSpanish ? "Peso del palet (Kg)" : "Palet net weight (Kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('100x120')}>
+                                {isSpanish ? "100x120 Cajas/Palet" : "100x120 Boxes/Palet"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 100x120 (Kg)')}>
+                                {isSpanish ? "Peso del palet (Kg)" : "Palet net weight (Kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3">
+                                {isSpanish ? "Imagen" : "Image"}  Image
+                            </th>
+                        </tr>
+                    </thead>
                 <tbody>
                     {filteredProducts.map((product, index) => (
                         <tr key={index} className={`bg-white border-b ${index % 2 === 0 ? 'dark:bg-gray-800' : 'dark:border-gray-700'}`}>

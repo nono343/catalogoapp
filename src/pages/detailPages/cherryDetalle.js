@@ -38,23 +38,24 @@ function CherryDetalle({ isSpanish }) {
             </section>
 
             {productionSchedule && productionSchedule.length > 0 && (
-                <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
-                    <h1 className="sm:text-3xl text-center text-2xl mb-5">
-                        {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
-                    </h1>
-                    <div className="flex justify-center max-w-screen-md mx-auto">
-                        {productionSchedule.map((item, index) => (
-                            <a
-                                key={index}
-                                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600`}
-                            >
-                                {index + 1}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            )}
-            <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
+        <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6">
+          <h1 className="sm:text-3xl text-center text-2xl mb-5">
+            {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
+          </h1>
+          <div className="flex justify-center max-w-screen-md mx-auto">
+            {productionSchedule.map((item, index) => (
+              <a
+                key={index}
+                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
+              >
+                {index + 1}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      
+                  <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
             </div>
             <CherryPackagingTable />
         </div>

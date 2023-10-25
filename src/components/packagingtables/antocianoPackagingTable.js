@@ -78,6 +78,8 @@ function AntocianoPackagingTable() {
           setSearchTerm(''); // Establece searchTerm en una cadena vacía para borrar la búsqueda
       };
   
+
+
   
       return (
         <section className="body-font mb-5 max-w-screen-2xl mx-auto">

@@ -66,7 +66,7 @@ function TropicalesDetalle({ isSpanish }) {
 
             <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
             </div>
-            {(nombreCard === 'aguacate_bacon' || nombreCard === 'aguacate_hass' || nombreCard === 'aguacate_fuerte' || nombreCard === 'aguacate_pinkerton') && (<AguacatePackagingTable />)}
+            {(nombreCard === 'aguacate_bacon' || nombreCard === 'aguacate_hass' || nombreCard === 'aguacate_fuerte' || nombreCard === 'aguacate_pinkerton') && (<AguacatePackagingTable isSpanish={isSpanish}/>)}
             {(nombreCard === 'mango_osteen' || nombreCard === 'mango_irwin' || nombreCard === 'mango_keitt' || nombreCard === 'mango_kent' || nombreCard === 'mango_miniirwin') && (<MangoPackagingTable />)}
             {(nombreCard === 'pitahaya_púrpura' || nombreCard === 'pitahaya_rosa' || nombreCard === 'pitahaya_blanca') && (<PitahayaPackagingTable />)}
             {(nombreCard === 'chirimoya_fino_de_jete') && (<ChirimoyaPackagingTable />)}
