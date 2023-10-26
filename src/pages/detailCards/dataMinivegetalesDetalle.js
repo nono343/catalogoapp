@@ -54,6 +54,9 @@ export const dataMinivegetalesDetalle = {
             `,        
         },
         image: tribelli,
+        
+        image1: mycubies,
+
         productionSchedule: [
             { isRed: true },  //enero
             { isRed: true },  //febrero

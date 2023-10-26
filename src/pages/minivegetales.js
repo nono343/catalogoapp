@@ -7,7 +7,7 @@ import appCards from '../components/appCards';
 function Minivegetales({isSpanish}) {
     const location = useLocation();
 
-    const selectedTraditionalsCards = appCards.slice(21, 23); // Esto mostrará las primeras nueve tarjetas
+    const selectedTraditionalsCards = appCards.slice(24, 27); // Esto mostrará las primeras nueve tarjetas
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -19,7 +19,7 @@ function Minivegetales({isSpanish}) {
         <div className="relative text-center py-16 animate-fade-down">
             <div className="container m-auto px-6 text-gray-500 md:px-12">
                 <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-                    {isSpanish ? 'MiniVegetales' : 'Mini Vegetables'}
+                    {isSpanish ? 'Minivegetales' : 'Mini Vegetables'}
                 </h2>
 
                 <div className="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-3">

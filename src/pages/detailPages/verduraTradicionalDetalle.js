@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { dataVerduraTradicionalDetalle } from '../detailCards/dataVerduraTradicionalDetalle';
 
-import BerenjenaPackagingTable from '../../components/packagingtables/berenjenaPackagingTable';
+import BerenjenaPackagingTable from '../../components/packagingtables/berenjenajaponesaPackagingTable';
 import LamuyoPackagingTable from '../../components/packagingtables/lamuyoPackagingTable';
 import PicantesPackagingTable from '../../components/packagingtables/picantesPackagingTable';
+import PadronPackagingTable from '../../components/packagingtables/padronPackagingTable';
+import SweetpalermoPackagingTable from '../../components/packagingtables/sweetpalermoPackagingTable';
+import CalabacinalargadoPackagingTable from '../../components/packagingtables/calabacinalargadoPackagingTable';
 
 
-function VerduraTradicionalDetalle({isSpanish}) {
+function VerduraTradicionalDetalle({ isSpanish }) {
     const { nombreCard } = useParams();
     const card = dataVerduraTradicionalDetalle[nombreCard];
     const { name, description, image, productionSchedule } = card;
@@ -41,7 +44,7 @@ function VerduraTradicionalDetalle({isSpanish}) {
             </section>
 
             {productionSchedule && productionSchedule.length > 0 && (
-                <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
+                <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6">
                     <h1 className="sm:text-3xl text-center text-2xl mb-5">
                         {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
                     </h1>
@@ -49,7 +52,7 @@ function VerduraTradicionalDetalle({isSpanish}) {
                         {productionSchedule.map((item, index) => (
                             <a
                                 key={index}
-                                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600`}
+                                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
                             >
                                 {index + 1}
                             </a>
@@ -58,11 +61,16 @@ function VerduraTradicionalDetalle({isSpanish}) {
                 </div>
             )}
 
+
             <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
             </div>
-            {nombreCard === 'berenjena_japonesa' && <BerenjenaPackagingTable />} {/* Render Beef Packaging Table */}
-            {nombreCard === 'pimiento_lamuyo' && <LamuyoPackagingTable />} {/* Render Pera Packaging Table */}
-            {nombreCard === 'pimientos_picantes' && <PicantesPackagingTable />} {/* Render Corazon de Buey Packaging Table */}
+
+            {nombreCard === 'berenjena_japonesa' || nombreCard === 'japanese_aubergine' ? <BerenjenaPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'pimiento_lamuyo' || nombreCard === 'lamuyo_pepper' ? <LamuyoPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'pimientos_picantes' || nombreCard === 'spicy_peppers' ? <PicantesPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'pimiento_padrón' || nombreCard === 'padron_pepper' ? <PadronPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'pimiento_sweet_palermo' || nombreCard === 'sweet_palermo_pepper' ? <SweetpalermoPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'calabacín_alargado' || nombreCard === 'elongated_zucchini' ? <CalabacinalargadoPackagingTable isSpanish={isSpanish} /> : null}
 
 
         </div>

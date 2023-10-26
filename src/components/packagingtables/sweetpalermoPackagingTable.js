@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Input } from "@material-tailwind/react";
-import ChocmatoDataPackaging from './datatable/chocmatoDataPackaging';
+import SweetpalermoDataPackaging from './datatable/sweetpalermoDataPackaging';
 
-function ChocmatoPackagingTable({ isSpanish }) {
+
+function SweetpalermoPackagingTable({ isSpanish }) {
     const [products, setProducts] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
     const [searchTerm, setSearchTerm] = useState('');
-    const [chocmatoData, setChocmatoData] = useState(null);
+    const [sweetpalermoData, setSweetpalermoData] = useState(null);
     const [filter, setFilter] = useState(''); // Estado para el filtro
     const [selectedFilter, setSelectedFilter] = useState(""); // Estado para el filtro seleccionado
     const [isImageEnlarged, setIsImageEnlarged] = useState(false);
@@ -16,20 +17,20 @@ function ChocmatoPackagingTable({ isSpanish }) {
     useEffect(() => {
         // Este efecto solo debe ejecutarse una vez cuando se monta el componente
         // Obtén los datos del producto "amela" desde productData y configúralos en el estado
-        const chocmatoProductData = ChocmatoDataPackaging(isSpanish).Packaging;
-        setChocmatoData(chocmatoProductData);
+        const sweetpalermoProductData = SweetpalermoDataPackaging(isSpanish).Packaging;
+        setSweetpalermoData(sweetpalermoProductData);
     }, [isSpanish]);
     
     useEffect(() => {
-        // Este efecto actualiza la lista de productos cuando cambia chocmatoData o isSpanish
-        if (chocmatoData && typeof chocmatoData === 'object') {
-            const dataArray = Object.keys(chocmatoData).map(key => ({
+        // Este efecto actualiza la lista de productos cuando cambia sweetpalermoData o isSpanish
+        if (sweetpalermoData && typeof sweetpalermoData === 'object') {
+            const dataArray = Object.keys(sweetpalermoData).map(key => ({
                 key: key,
-                value: chocmatoData[key]
+                value: sweetpalermoData[key]
             }));
             setProducts(dataArray);
         }
-    }, [chocmatoData, isSpanish]);
+    }, [sweetpalermoData, isSpanish]);
     
     const handleSort = (column) => {
         const sortOrderToggle = sortOrder === 'asc' ? 'desc' : 'asc';
@@ -209,4 +210,4 @@ function ChocmatoPackagingTable({ isSpanish }) {
     );
 }
 
-export default ChocmatoPackagingTable
+export default SweetpalermoPackagingTable

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Input } from "@material-tailwind/react";
-import ChocmatoDataPackaging from './datatable/chocmatoDataPackaging';
+import CalabacinalargadoDataPackaging from './datatable/calabacinalargadoDataPackaging';
 
-function ChocmatoPackagingTable({ isSpanish }) {
+
+function CalabacinalargadoPackagingTable({ isSpanish }) {
     const [products, setProducts] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
     const [searchTerm, setSearchTerm] = useState('');
-    const [chocmatoData, setChocmatoData] = useState(null);
+    const [calabacinalargadoData, setCalabacinalargadoData] = useState(null);
     const [filter, setFilter] = useState(''); // Estado para el filtro
     const [selectedFilter, setSelectedFilter] = useState(""); // Estado para el filtro seleccionado
     const [isImageEnlarged, setIsImageEnlarged] = useState(false);
@@ -16,20 +17,20 @@ function ChocmatoPackagingTable({ isSpanish }) {
     useEffect(() => {
         // Este efecto solo debe ejecutarse una vez cuando se monta el componente
         // Obtén los datos del producto "amela" desde productData y configúralos en el estado
-        const chocmatoProductData = ChocmatoDataPackaging(isSpanish).Packaging;
-        setChocmatoData(chocmatoProductData);
+        const calabacinalargadoProductData = CalabacinalargadoDataPackaging(isSpanish).Packaging;
+        setCalabacinalargadoData(calabacinalargadoProductData);
     }, [isSpanish]);
     
     useEffect(() => {
-        // Este efecto actualiza la lista de productos cuando cambia chocmatoData o isSpanish
-        if (chocmatoData && typeof chocmatoData === 'object') {
-            const dataArray = Object.keys(chocmatoData).map(key => ({
+        // Este efecto actualiza la lista de productos cuando cambia calabacinalargadoData o isSpanish
+        if (calabacinalargadoData && typeof calabacinalargadoData === 'object') {
+            const dataArray = Object.keys(calabacinalargadoData).map(key => ({
                 key: key,
-                value: chocmatoData[key]
+                value: calabacinalargadoData[key]
             }));
             setProducts(dataArray);
         }
-    }, [chocmatoData, isSpanish]);
+    }, [calabacinalargadoData, isSpanish]);
     
     const handleSort = (column) => {
         const sortOrderToggle = sortOrder === 'asc' ? 'desc' : 'asc';
@@ -209,4 +210,4 @@ function ChocmatoPackagingTable({ isSpanish }) {
     );
 }
 
-export default ChocmatoPackagingTable
+export default CalabacinalargadoPackagingTable

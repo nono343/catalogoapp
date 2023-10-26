@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Cherrys({ isSpanish }) {
   const location = useLocation();
 
-  const selectedCherryCards = appCards.slice(12, 21); // Esto mostrará las primeras nueve tarjetas
+  const selectedCherryCards = appCards.slice(12, 24); // Esto mostrará las primeras nueve tarjetas
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,7 +23,7 @@ function Cherrys({ isSpanish }) {
           {selectedCherryCards.map((card, index) => (
             <Link
               key={card.nombre + index} // Usar una combinación de card.nombre y el índice para crear claves únicas
-              to={`/cherrys/${card.nombre.es.toLowerCase().replace(/ /g, '_')}`} 
+              to={`/cherrys/${card.nombre.es.toLowerCase().replace(/ /g, '_').replace(/®/g, '')}`}
               className="group space-y-1 border border-gray-100 dark:border-gray-700 rounded-3xl bg-white dark:bg-gray-800 px-8 py-12 text-center shadow-2xl shadow-gray-600/10 dark:shadow-none transition-transform transform hover:scale-105 duration-500 ease-in-out hover:shadow-2xl hover:border-red-400"
             >
               <img className="mx-auto w-120" src={card.imagen} alt="illustration" loading="lazy" />

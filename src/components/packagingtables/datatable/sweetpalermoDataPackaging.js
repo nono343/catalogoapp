@@ -1,0 +1,82 @@
+import amelaImage from '../../../assets/tomatedulce/amela/amela1.jpg';
+
+const SweetpalermoDataPackaging = (isSpanish) => {
+    return {
+        Packaging: [
+            {
+                Packaging: isSpanish ? 'BOLSA CÓNICA CON CINTA' : 'CONICAL BAG WITH BAND',
+                Presentation: '10',
+                'Presentation Weight (g)': '200',
+                'Net Weight (kg)': '2',
+                'Box size': isSpanish ? '40X30X15,5' : '40x30x15.5',
+                '80x120': '112',
+                'Net Weight 80x120 (Kg)': '224',
+                '100x120': '140',
+                'Net Weight 100x120 (Kg)': '280',
+                Image: amelaImage,
+              },
+              {
+                Packaging: isSpanish ? 'BOLSA CÓNICA CON CINTA' : 'CONICAL BAG WITH BAND',
+                Presentation: '12',
+                'Presentation Weight (g)': '200',
+                'Net Weight (kg)': '2.4',
+                'Box size': isSpanish ? '60X40X9,7' : '60x40x9.7',
+                '80x120': '92',
+                'Net Weight 80x120 (Kg)': '220.8',
+                '100x120': '115',
+                'Net Weight 100x120 (Kg)': '276',
+                Image: amelaImage,
+              },
+              {
+                Packaging: isSpanish ? 'BOLSA CÓNICA CON CINTA' : 'CONICAL BAG WITH BAND',
+                Presentation: '12',
+                'Presentation Weight (g)': '500',
+                'Net Weight (kg)': '6',
+                'Box size': isSpanish ? '40X30X21' : '40x30x21',
+                '80x120': '80',
+                'Net Weight 80x120 (Kg)': '480',
+                '100x120': '100',
+                'Net Weight 100x120 (Kg)': '600',
+                Image: amelaImage,
+              },
+              {
+                Packaging: isSpanish ? 'CINTA ENFAJADO CARTÓN' : 'CARTON BAND',
+                Presentation: '8',
+                'Presentation Weight (g)': '200',
+                'Net Weight (kg)': '1.6',
+                'Box size': isSpanish ? '40X30X14' : '40x30x14',
+                '80x120': '128',
+                'Net Weight 80x120 (Kg)': '204.8',
+                '100x120': '150',
+                'Net Weight 100x120 (Kg)': '240',
+                Image: amelaImage,
+              },
+              {
+                Packaging: isSpanish ? 'GRANEL' : 'LOOSE',
+                Presentation: '1',
+                'Presentation Weight (g)': '4000',
+                'Net Weight (kg)': '4',
+                'Box size': isSpanish ? '60X40X12' : '60x40x12',
+                '80x120': '72',
+                'Net Weight 80x120 (Kg)': '288',
+                '100x120': '90',
+                'Net Weight 100x120 (Kg)': '360',
+                Image: amelaImage,
+              },
+              {
+                Packaging: isSpanish ? 'GRANEL' : 'LOOSE',
+                Presentation: '1',
+                'Presentation Weight (g)': '4500',
+                'Net Weight (kg)': '4.5',
+                'Box size': isSpanish ? '40X30X21' : '40x30x21',
+                '80x120': '80',
+                'Net Weight 80x120 (Kg)': '360',
+                '100x120': '100',
+                'Net Weight 100x120 (Kg)': '450',
+                Image: amelaImage,
+              },
+                    ],
+    };
+};
+
+export default SweetpalermoDataPackaging;

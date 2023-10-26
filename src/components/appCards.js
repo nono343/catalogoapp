@@ -19,10 +19,18 @@ import cherryperachocolate from '../assets/cherrypera/chocolate/chocolate.jpg';
 import cherryperafresa from '../assets/cherrypera/fresa/fresa.jpg';
 import cherryperanaranja from '../assets/cherrypera/naranja/naranja.jpg';
 import cherryperapeppermato from '../assets/cherrypera/peppermato/peppermato.jpg';
+import wildmix from '../assets/cherry/cherry.jpg';
+
+
+import cherryredondorama from '../assets/cherryredondo/rama/rama.jpg';
+import cherryjuanita from '../assets/cherryredondo/juanita/juanita.jpg';
+
 import cherryperarama from '../assets/cherrypera/rama/rama.jpg';
+
 
 import mycubies from '../assets/minivegetales/mycubies/mycubies.jpg';
 import tribelli from '../assets/minivegetales/tribelli/tribelli.jpg';
+import fiesta from '../assets/fiesta/fiesta.jpg';
 
 
 import berenjena from '../assets/tradicionales/berenjena/berenjena.jpg';
@@ -136,6 +144,13 @@ const appCards = [
   },
 
   //cherrys
+  {
+    nombre: {
+      es: 'Redondo Rojo',
+      en: 'Red Round',
+    },
+    imagen: cherryredondorojo,
+  },
 
   {
     nombre: {
@@ -146,38 +161,10 @@ const appCards = [
   },
   {
     nombre: {
-      es: 'Redondo Rojo',
-      en: 'Red Round',
-    },
-    imagen: cherryredondorojo,
-  },
-  {
-    nombre: {
-      es: 'Pera Amarillo',
-      en: 'Yellow Plum',
-    },
-    imagen: cherryperaamarillo,
-  },
-  {
-    nombre: {
       es: 'Pera Angelle',
       en: 'Angelle Plum',
     },
     imagen: cherryperaangelle,
-  },
-  {
-    nombre: {
-      es: 'Pera Chocolate',
-      en: 'Chocolate Plum',
-    },
-    imagen: cherryperachocolate,
-  },
-  {
-    nombre: {
-      es: 'Pera Fresa',
-      en: 'Strawberry Plum',
-    },
-    imagen: cherryperafresa,
   },
   {
     nombre: {
@@ -188,15 +175,63 @@ const appCards = [
   },
   {
     nombre: {
-      es: 'Pera Peppermato',
-      en: 'Peppermato Plum',
+      es: 'Pera Chocolate',
+      en: 'Chocolate Plum',
     },
-    imagen: cherryperapeppermato,
+    imagen: cherryperachocolate,
+  },
+
+  {
+    nombre: {
+      es: 'Pera Amarillo',
+      en: 'Yellow Plum',
+    },
+    imagen: cherryperaamarillo,
   },
   {
     nombre: {
-      es: 'Pera Rama',
-      en: 'Branch Plum',
+      es: 'Pera Marfil',
+      en: 'Ivory Baby Plum',
+    },
+    imagen: cherryperafresa,
+  },
+
+  {
+    nombre: {
+      es: 'Pera Fresa',
+      en: 'Strawberry Baby Plum',
+},
+    imagen: cherryperafresa,
+  },
+  {
+    nombre: {
+      es: 'Wildmix® Mezcla de Tomates Cherry',
+      en: 'Wildmix® Mix of Cherry Tomatoe',
+    },
+    imagen: wildmix,
+  },
+
+  {
+    nombre: {
+      es: 'Redondo en Rama',
+      en: 'Rounded on the Vine',
+    },
+    imagen: cherryredondorama,
+  },
+
+  {
+    nombre: {
+      es: 'Juanita en Rama',
+      en: 'Juanita on the Vine',
+    },
+    imagen: cherryjuanita,
+  },
+
+
+  {
+    nombre: {
+      es: 'Pera en Rama',
+      en: 'Baby Plum Tomatos on the Vine',
     },
     imagen: cherryperarama,
   },
@@ -218,6 +253,15 @@ const appCards = [
     },
     imagen: tribelli,
   },
+
+  {
+    nombre: {
+      es: 'Minivegetales a la parrilla & BBQ',
+      en: 'Miniveggies Oven Roast & BBQ',
+    },
+    imagen: fiesta,
+  },
+
 
   // tradicionales 
 

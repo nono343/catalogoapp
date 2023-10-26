@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Input } from "@material-tailwind/react";
 import AmelaDataPackaging from './datatable/amelaDataPackaging';
+
 function AmelaPackagingTable({ isSpanish }) {
     const [products, setProducts] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
@@ -113,7 +114,7 @@ function AmelaPackagingTable({ isSpanish }) {
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs cursor-pointer text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
+                            <th scope="col" className="px-4 sm:px-6 py-3 sticky left-0 bg-gray-50 dark:bg-gray-700 dark:text-gray-400" onClick={() => handleSort('Packaging')}>
                                 {isSpanish ? "Embalaje" : "Packaging"}
                             </th>
                             <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation')}>
@@ -148,7 +149,7 @@ function AmelaPackagingTable({ isSpanish }) {
                     <tbody>
                         {filteredProducts.map((product, index) => (
                             <tr className={`bg-white border-b ${index % 2 === 0 ? 'dark:bg-gray-800' : 'dark:border-gray-700'}`} key={product.key}>
-                                <th scope="row" className="px-4 sm:px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="row" className="px-4 sm:px-6 py-3 sticky left-0 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     {product.value.Packaging}
                                 </th>
                                 <td className="px-4 sm:px-6 py-4">

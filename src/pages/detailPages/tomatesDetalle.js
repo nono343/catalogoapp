@@ -6,13 +6,13 @@ import AmelaPackagingTable from '../../components/packagingtables/amelaPackaging
 import AdoraPackagingTable from '../../components/packagingtables/adoraPackagingTable';
 import PrimoraPackagingTable from '../../components/packagingtables/primoraPackagingTable';
 import ChocmatoPackagingTable from '../../components/packagingtables/chocmatoPackagingTable';
-import AntocianoPackagingTable from '../../components/packagingtables/antocianoPackagingTable';
 import MonterosaPackagingTable from '../../components/packagingtables/monterosaPackagingTable';
 import DulceextraPackagingTable from '../../components/packagingtables/dulceextraPackagingTable';
 import BeefPackagingTable from '../../components/packagingtables/beefPackagingTable';
 import PeraPackagingTable from '../../components/packagingtables/peraPackagingTable';
 import CorazondebueyPackagingTable from '../../components/packagingtables/corazondebueyPackagingTable';
 import MelangePackagingTable from '../../components/packagingtables/melangePackagingTable';
+import MuricePackagingTable from '../../components/packagingtables/muricePackagingTable';
 
 function TomatesDetalle({ isSpanish }) {
   const { nombreCard } = useParams();
@@ -53,32 +53,32 @@ function TomatesDetalle({ isSpanish }) {
             {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
           </h1>
           <div className="flex justify-center max-w-screen-md mx-auto">
-          {productionSchedule.map((item, index) => (
-  <a
-    key={index}
-    className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
-  >
-    {index + 1}
-  </a>
-))}
+            {productionSchedule.map((item, index) => (
+              <a
+                key={index}
+                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
+              >
+                {index + 1}
+              </a>
+            ))}
           </div>
         </div>
       )}
 
-<div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6"></div>
+      <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6"></div>
       {/* Render the packaging table based on nombreCard */}
       {nombreCard === 'amela' && <AmelaPackagingTable isSpanish={isSpanish} />}
-      {nombreCard === 'dulcextra' && <DulceextraPackagingTable />}
-      {nombreCard === 'adora' && <AdoraPackagingTable />}
-      {nombreCard === 'primora' && <PrimoraPackagingTable />}
-      {nombreCard === 'chocmato' && <ChocmatoPackagingTable />}
-      {nombreCard === 'monterosa' && <MonterosaPackagingTable />}
-      {nombreCard === 'murice' && <AntocianoPackagingTable />}
-      {nombreCard === 'beef' && <BeefPackagingTable />}
-      {nombreCard === 'pera_rojo' || nombreCard === 'red_plum' ? <PeraPackagingTable /> : null}
-      {nombreCard === 'pera_naranja' || nombreCard === 'orange_plum' ? <PeraPackagingTable /> : null}
-      {nombreCard === 'corazon_de_buey' || nombreCard === 'oxheart' ? <CorazondebueyPackagingTable /> : null}
-      {nombreCard === 'melange' && <MelangePackagingTable />}
+      {nombreCard === 'dulcextra' && <DulceextraPackagingTable isSpanish={isSpanish} />}
+      {nombreCard === 'adora' && <AdoraPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'primora' && <PrimoraPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'chocmato' && <ChocmatoPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'monterosa' && <MonterosaPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'murice' && <MuricePackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'beef' && <BeefPackagingTable isSpanish={isSpanish}/>}
+      {nombreCard === 'pera_rojo' || nombreCard === 'red_plum' ? <PeraPackagingTable isSpanish={isSpanish}/> : null}
+      {nombreCard === 'pera_naranja' || nombreCard === 'orange_plum' ? <PeraPackagingTable isSpanish={isSpanish}/> : null}
+      {nombreCard === 'corazón_de_buey' || nombreCard === 'oxheart' ? <CorazondebueyPackagingTable isSpanish={isSpanish} /> : null}
+      {nombreCard === 'melange' && <MelangePackagingTable isSpanish={isSpanish}/>}
     </div>
   );
 }

@@ -1,402 +1,212 @@
-import React, { useState } from 'react';
-import { Input } from '@material-tailwind/react';
+import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
+import { Input } from "@material-tailwind/react";
+import TribelliDataPackaging from './datatable/tribelliDataPackaging';
 
-import amela1 from '../../assets/tomatedulce/amela/amela1.jpg';
+function TribelliPackagingTable({ isSpanish }) {
+    const [products, setProducts] = useState([]);
+    const [sortOrder, setSortOrder] = useState('asc');
+    const [searchTerm, setSearchTerm] = useState('');
+    const [tribelliData, setTribelliData] = useState(null);
+    const [filter, setFilter] = useState(''); // Estado para el filtro
+    const [selectedFilter, setSelectedFilter] = useState(""); // Estado para el filtro seleccionado
+    const [isImageEnlarged, setIsImageEnlarged] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-
-function TribelliPackagingTable() {
-    const [products, setProducts] = useState([
-        {
-          Packaging: 'Shaker with lid',
-          Presentation: '12',
-          'Presentation Weight (g)': '250',
-          'Net Weight (kg)': '3',
-          'Box size': '40*30*15.5',
-          '80x120': '112',
-          'Net Weight 80x120 (Kg)': '336',
-          '100x120': '140',
-          'Net Weight 100x120 (Kg)': '420',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Stockable clamshell shaker',
-          Presentation: '12',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '1.8',
-          'Box size': '40*30*12',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '259',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '324',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Punnet with flowpack',
-          Presentation: '12',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '1.8',
-          'Box size': '40*30*12',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '259',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '324',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Punnet with flowpack',
-          Presentation: '12',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '1.8',
-          'Box size': '60*40*7',
-          '80x120': '124',
-          'Net Weight 80x120 (Kg)': '223',
-          '100x120': '155',
-          'Net Weight 100x120 (Kg)': '279',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Top seal punnet',
-          Presentation: '6',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '0.9',
-          'Box size': '40*30*7',
-          '80x120': '248',
-          'Net Weight 80x120 (Kg)': '223',
-          '100x120': '310',
-          'Net Weight 100x120 (Kg)': '279',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Top seal punnet',
-          Presentation: '12',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '1.8',
-          'Box size': '40*30*12',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '259',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '324',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Top seal punnet',
-          Presentation: '12',
-          'Presentation Weight (g)': '150',
-          'Net Weight (kg)': '1.8',
-          'Box size': '60*40*6.2',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '259',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '324',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Punnet with flowpack',
-          Presentation: '8',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '1.6',
-          'Box size': '40*30*9.5',
-          '80x120': '176',
-          'Net Weight 80x120 (Kg)': '282',
-          '100x120': '220',
-          'Net Weight 100x120 (Kg)': '352',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Punnet with flowpack',
-          Presentation: '12',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '2.4',
-          'Box size': '40*30*12',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '346',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '432',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Top seal punnet',
-          Presentation: '10',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '2',
-          'Box size': '60*40*7',
-          '80x120': '124',
-          'Net Weight 80x120 (Kg)': '248',
-          '100x120': '155',
-          'Net Weight 100x120 (Kg)': '310',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Cellulose pulp top seal punnet',
-          Presentation: '10',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '2',
-          'Box size': '60*40*7',
-          '80x120': '124',
-          'Net Weight 80x120 (Kg)': '248',
-          '100x120': '155',
-          'Net Weight 100x120 (Kg)': '310',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Flowpack bag',
-          Presentation: '6',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '1.2',
-          'Box size': '40*30*8',
-          '80x120': '248',
-          'Net Weight 80x120 (Kg)': '298',
-          '100x120': '310',
-          'Net Weight 100x120 (Kg)': '372',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Flowpack bag',
-          Presentation: '10',
-          'Presentation Weight (g)': '200',
-          'Net Weight (kg)': '2',
-          'Box size': '40*30*9.5',
-          '80x120': '176',
-          'Net Weight 80x120 (Kg)': '352',
-          '100x120': '220',
-          'Net Weight 100x120 (Kg)': '440',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Top seal punnet',
-          Presentation: '10',
-          'Presentation Weight (g)': '300',
-          'Net Weight (kg)': '3',
-          'Box size': '60*40*9.7',
-          '80x120': '92',
-          'Net Weight 80x120 (Kg)': '276',
-          '100x120': '115',
-          'Net Weight 100x120 (Kg)': '345',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Bucket with lid',
-          Presentation: '14',
-          'Presentation Weight (g)': '300',
-          'Net Weight (kg)': '4.2',
-          'Box size': '60*40*15',
-          '80x120': '56',
-          'Net Weight 80x120 (Kg)': '235',
-          '100x120': '70',
-          'Net Weight 100x120 (Kg)': '294',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Loose',
-          Presentation: '1',
-          'Presentation Weight (g)': '1000',
-          'Net Weight (kg)': '1',
-          'Box size': '30*20*8',
-          '80x120': '240',
-          'Net Weight 80x120 (Kg)': '240',
-          '100x120': '395',
-          'Net Weight 100x120 (Kg)': '395',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Loose',
-          Presentation: '1',
-          'Presentation Weight (g)': '1500',
-          'Net Weight (kg)': '1.5',
-          'Box size': '30*20*11.5',
-          '80x120': '270',
-          'Net Weight 80x120 (Kg)': '405',
-          '100x120': '324',
-          'Net Weight 100x120 (Kg)': '486',
-          Image: amela1,
-        },
-        {
-          Packaging: 'Loose',
-          Presentation: '1',
-          'Presentation Weight (g)': '3000',
-          'Net Weight (kg)': '3',
-          'Box size': '40*30*12',
-          '80x120': '144',
-          'Net Weight 80x120 (Kg)': '432',
-          '100x120': '180',
-          'Net Weight 100x120 (Kg)': '540',
-          Image: amela1,
-        },
-      ]);
-      
-                                  
+    useEffect(() => {
+        // Este efecto solo debe ejecutarse una vez cuando se monta el componente
+        // Obtén los datos del producto "amela" desde productData y configúralos en el estado
+        const TribelliProductData = TribelliDataPackaging(isSpanish).Packaging;
+        setTribelliData(TribelliProductData);
+    }, [isSpanish]);
     
-      const [sortOrder, setSortOrder] = useState('asc');
+    useEffect(() => {
+        // Este efecto actualiza la lista de productos cuando cambia tribelliData o isSpanish
+        if (tribelliData && typeof tribelliData === 'object') {
+            const dataArray = Object.keys(tribelliData).map(key => ({
+                key: key,
+                value: tribelliData[key]
+            }));
+            setProducts(dataArray);
+        }
+    }, [tribelliData, isSpanish]);
+    
+    const handleSort = (column) => {
+        const sortOrderToggle = sortOrder === 'asc' ? 'desc' : 'asc';
 
-      const handleSort = (column) => {
-          if (sortOrder === 'asc') {
-              setSortOrder('desc');
-              products.sort((a, b) => {
-                  const numA = parseFloat(a[column].replace(',', '.').trim());
-                  const numB = parseFloat(b[column].replace(',', '.').trim());
-                  return numB - numA;
-              });
-          } else {
-              setSortOrder('asc');
-              products.sort((a, b) => {
-                  const numA = parseFloat(a[column].replace(',', '.').trim());
-                  const numB = parseFloat(b[column].replace(',', '.').trim());
-                  return numA - numB;
-              });
-          }
-          setProducts([...products]);
-      };
-  
-      const [showLargeImage, setShowLargeImage] = useState(false);
-      const [selectedImage, setSelectedImage] = useState(null);
-  
-      const handleImageClick = (image) => {
-          setSelectedImage(image);
-          setShowLargeImage(true);
-      };
-  
-      const closeLargeImage = () => {
-          setSelectedImage(null);
-          setShowLargeImage(false);
-      };
-  
-      const [searchTerm, setSearchTerm] = useState('');
-  
-      const filteredProducts = products.filter((product) =>
-          product.Packaging.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-  
-      const clearSearch = () => {
-          setSearchTerm(''); // Establece searchTerm en una cadena vacía para borrar la búsqueda
-      };
-  
-  
-      return (
+        const sortedProducts = [...products].sort((a, b) => {
+            const numA = parseFloat(a.value[column].replace(',', '.').trim());
+            const numB = parseFloat(b.value[column].replace(',', '.').trim());
+
+            if (sortOrderToggle === 'asc') {
+                return numA - numB;
+            } else {
+                return numB - numA;
+            }
+        });
+
+        setSortOrder(sortOrderToggle);
+        setProducts(sortedProducts);
+    };
+
+    const filteredProducts = products.filter((product) => {
+        const packagingName = product.value.Packaging.toLowerCase();
+        if (filter === 'granel') {
+            return packagingName.includes('granel');
+        } else if (filter === 'madera') {
+            return packagingName.includes('madera');
+        } else {
+            return packagingName.includes(searchTerm.toLowerCase());
+        }
+    });
+
+    const handleFilterChange = (selectedFilter) => {
+        setFilter(selectedFilter);
+    };
+
+    const clearSearch = () => {
+        setSearchTerm(''); // Establece searchTerm en una cadena vacía para borrar la búsqueda
+    };
+
+    const openImageModal = (index) => {
+        setSelectedImageIndex(index);
+        setIsImageEnlarged(true);
+    };
+
+    const closeImageModal = () => {
+        setIsImageEnlarged(false);
+    };
+
+    return (
         <section className="body-font mb-5 max-w-screen-2xl mx-auto">
-        <h1 className="sm:text-3xl text-center text-2xl mb-5 animate-fade-up">Formatos de venta</h1>
-        <div className='container max-w-screen-sm relative m-auto text-center px-6 text-gray-500 md:px-12 mb-5 animate-fade-up'>
-            <div className="relative">
-                <Input
-                    color="red"
-                    label="Buscar formatos de venta..."
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                {searchTerm && (
-                    <button
-                        onClick={clearSearch}
-                        className="absolute top-0 right-0 m-2 text-gray-500 hover:text-red-500"
-                    >
-                        <XMarkIcon className="w-5 h-5" />
-                    </button>
-                )}
-            </div>
-        </div>
-
-
-        <div className="relative overflow-x-auto shadow-md rounded-lg animate-fade-up">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
-                            Packaging
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation')}>
-                            Presentation
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation Weight (g)')}>
-                            Presentation Weight (g)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight (kg)')}>
-                            Net Weight (kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Box size')}>
-                            Box size
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('80x120')}>
-                            80x120
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 80x120 (Kg)')}>
-                            Net Weight (Kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('100x120')}>
-                            100x120
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 100x120 (Kg)')}>
-                            Net Weight (Kg)
-                        </th>
-                        <th scope="col" className="px-4 sm:px-6 py-3">
-                            Image
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredProducts.map((product, index) => (
-                        <tr key={index} className={`bg-white border-b ${index % 2 === 0 ? 'dark:bg-gray-800' : 'dark:border-gray-700'}`}>
-                            <th scope="row" className="px-4 sm:px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {product.Packaging}
-                            </th>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product.Presentation}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['Presentation Weight (g)']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['Net Weight (kg)']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['Box size']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['80x120']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['Net Weight 80x120 (Kg)']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['100x120']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                {product['Net Weight 100x120 (Kg)']}
-                            </td>
-                            <td className="px-4 sm:px-6 py-4">
-                                <img
-                                    src={product.Image}
-                                    alt="Product"
-                                    className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-full cursor-pointer"
-                                    onClick={() => handleImageClick(product.Image)}
-                                />
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-
-        {showLargeImage && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
-                <div className="relative z-10">
-                    <img
-                        src={selectedImage}
-                        alt="Large Product"
-                        className="w-full h-full max-w-screen-md sm:max-w-screen-lg object-contain cursor-pointer animate-fade"
-                        onClick={closeLargeImage}
+            <h1 className="sm:text-3xl text-center text-2xl mb-5 animate-fade-up">{isSpanish ? 'Formatos de venta' : 'Selling Formats'}</h1>
+            <div className='container max-w-screen-sm relative m-auto text-center px-6 text-gray-500 md:px-12 mb-5 animate-fade-up'>
+                <div className="relative">
+                    <Input
+                        color="red"
+                        type="text"
+                        label = {isSpanish ? 'Buscar por nombre de packaging' : 'Search by packaging name'}
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <div className="absolute top-4 right-4">
-                        <XMarkIcon
-                            className="text-red-900 w-6 h-6 cursor-pointer"
-                            onClick={closeLargeImage}
-                        />
-                    </div>
-
+                    {searchTerm && (
+                        <button
+                            onClick={clearSearch}
+                            className="absolute top-0 right-0 m-2 text-gray-500 hover:text-red-500"
+                        >
+                            <XMarkIcon className="w-5 h-5" />
+                        </button>
+                    )}
+                </div>
+                <div className="mb-4">
+                    <select
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white dark:bg-gray-800 shadow-sm focus:ring focus:ring-opacity-50"
+                        value={filter}
+                        onChange={(e) => handleFilterChange(e.target.value)}
+                    >
+                        <option value="">{isSpanish ? 'Filtrar por:' : 'Filter by:'}</option>
+                        <option value="granel">{isSpanish ? 'Granel' : 'Bulk'}</option>
+                        <option value="madera">{isSpanish ? 'Madera' : 'Wood'}</option>
+                    </select>
                 </div>
             </div>
-        )}
-    </section>
-);}  
+            <div className="relative overflow-x-auto shadow-md rounded-lg animate-fade-up">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs cursor-pointer text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Packaging')}>
+                                {isSpanish ? "Embalaje" : "Packaging"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation')}>
+                                {isSpanish ? "Formato" : "Presentation"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Presentation Weight (g)')}>
+                                {isSpanish ? "Peso del formato" : "Presentation Weight (g)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight (kg)')}>
+                                {isSpanish ? "Peso neto (kg)" : "Net Weight (kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Box size')}>
+                                {isSpanish ? "Medidas caja" : "Box size"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('80x120')}>
+                                {isSpanish ? "80x120 Cajas/Palet" : "80x120 Boxes/Palet"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 80x120 (Kg)')}>
+                                {isSpanish ? "Peso del palet (Kg)" : "Palet net weight (Kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('100x120')}>
+                                {isSpanish ? "100x120 Cajas/Palet" : "100x120 Boxes/Palet"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3" onClick={() => handleSort('Net Weight 100x120 (Kg)')}>
+                                {isSpanish ? "Peso del palet (Kg)" : "Palet net weight (Kg)"}
+                            </th>
+                            <th scope="col" className="px-4 sm:px-6 py-3">
+                                {isSpanish ? "Imagen" : "Image"}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filteredProducts.map((product, index) => (
+                            <tr className={`bg-white border-b ${index % 2 === 0 ? 'dark:bg-gray-800' : 'dark:border-gray-700'}`} key={product.key}>
+                                <th scope="row" className="px-4 sm:px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {product.value.Packaging}
+                                </th>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value.Presentation}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['Presentation Weight (g)']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['Net Weight (kg)']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['Box size']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['80x120']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['Net Weight 80x120 (Kg)']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['100x120']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    {product.value['Net Weight 100x120 (Kg)']}
+                                </td>
+                                <td className="px-4 sm:px-6 py-4">
+                                    <img
+                                        src={product.value.Image}
+                                        alt="Product"
+                                        className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-full cursor-pointer"
+                                        onClick={() => openImageModal(index)}
+                                    />
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            {isImageEnlarged && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+                    <div className="relative z-10">
+                        <img
+                            src={filteredProducts[selectedImageIndex].value.Image}
+                            alt="Large Product"
+                            className="w-full h-full max-w-screen-md sm:max-w-screen-lg object-contain cursor-pointer animate-fade"
+                            onClick={closeImageModal} />
+                        <div className="absolute top-4 right-4">
+                            <XMarkIcon
+                                className="text-red-900 w-6 h-6 cursor-pointer"
+                                onClick={closeImageModal} />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
+    );
+}
 
-
-export default TribelliPackagingTable;
+export default TribelliPackagingTable

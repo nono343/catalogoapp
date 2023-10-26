@@ -88,11 +88,17 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>Passion for Flavor</strong>
-            <p>A tomato that stimulates all the senses.</p>
-            <p>Adora® is a unique and strong-willed tomato marked by its striking dark brown color and intense green shoulders.</p>
-            <p>Its flavor is a perfect balance between sweetness and acidity, the result of the fusion of tradition and innovation.</p>
-            `,
+            <strong>Pasión por el sabor
+            </strong>
+            <p>Un tomate que estimula todos los sentidos.</p>
+            <p>Adora® es un tomate único y de gran 
+            personalidad que viene marcado por 
+            su llamativo color marrón oscuro y sus 
+            hombros verde intenso. </p>
+            <p>Su sabor es un equilibrio perfecto entre 
+            dulzura y acidez, y el resultado de la 
+            fusión entre tradición e innovación.</p>
+                        `,
             en: `
             <strong>Passion for Flavor</strong>
             <p>A tomato that stimulates all the senses.</p>
@@ -124,11 +130,19 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>The Aromatic Marmande Tomato</strong>
-            <p>A Marmande-type tomato variety characterized by its distinctive ribbed shape and attractive dark brown color with intense green shoulders.</p>
-            <p>Irresistible character and flavor, thanks to the perfect balance of sweetness and acidity, as well as a high concentration of vitamins.</p>
-            <p>Discover its unparalleled crunchy texture and unique flavor.</p>
-            `,
+            <strong>El aromático tomate 
+            Marmande</strong>
+            <p>Una variedad de tomate tipo marmande 
+            caracterizada por su particular forma 
+            acostillada de un atractivo color marrón 
+            con hombros verde intenso. </p>
+            <p>Carácter y sabor irresistible , gracias al 
+            equilibrio perfecto de dulzura y acidez, 
+            así como una alta concentración de 
+            vitaminas. </p>
+            <p>Descubre su inigualable textura crujiente 
+            y su sabor único.</p>
+                        `,
             en: `
             <strong>The Aromatic Marmande Tomato</strong>
             <p>A Marmande-type tomato variety characterized by its distinctive ribbed shape and attractive dark brown color with intense green shoulders.</p>
@@ -160,18 +174,8 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>A Surprising Delight</strong>
-            <p>Let yourself be seduced by the intense and exotic chocolate color of this pear cherry tomato.</p>
-            <p>An exquisite tomato that sets itself apart with a unique texture and ripening process that enhance its characteristics.</p>
-            <p>The Minichocmato® tomatoes are very juicy, with a firm texture. Despite their unusual appearance, this tomato family has an intensely unique and incredibly pleasant flavor.</p>
-            <p>They have a higher sweetness than traditional tomatoes, balanced by slightly acidic notes.</p>
-            `,
+                        `,
             en: `
-            <strong>A Surprising Delight</strong>
-            <p>Let yourself be seduced by the intense and exotic chocolate color of this pear cherry tomato.</p>
-            <p>An exquisite tomato that sets itself apart with a unique texture and ripening process that enhance its characteristics.</p>
-            <p>The Minichocmato® tomatoes are very juicy, with a firm texture. Despite their unusual appearance, this tomato family has an intensely unique and incredibly pleasant flavor.</p>
-            <p>They have a higher sweetness than traditional tomatoes, balanced by slightly acidic notes.</p>
             `,
         },
         image: chocmato,
@@ -198,11 +202,26 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>Seductive, Vibrant, with Character</strong>
-            <p>The Murex sea snail is a mollusk that hides a unique secret. Inside, it holds a substance that dyes what it touches a royal purple color. Cleopatra used it to dye the sails of her ship to flatter Caesar.</p>
-            <p>This beautiful story inspired the Murice Tomato, which stands out for its attractive and beautiful purple color obtained thanks to its high concentration of anthocyanins, which provide great health benefits.</p>
-            <p>Although Murice departs from the traditional tomato, it's perfect to consume in salads, as a side dish, or as an appetizer. Intense in its form and background, it hides magical secrets inside.</p>
-            `,
+            <strong>Seductor, vivo, con 
+            carácter</strong>
+            <p>El caracol de mar Murice es un molusco que 
+            esconde un secreto único. En su interior 
+            guarda una sustancia que tiñe lo que roza 
+            de un color púrpura imperial. Cleopatra lo 
+            utilizó para teñir las velas del barco con el 
+            propósito de halagar al César.</p>
+            <p>En esta hermosa historia se inspira el 
+            Tomate Murice, que destaca por su 
+            atractivo y bello color púrpura obtenido 
+            gracias a su alta concentración de 
+            antocianinas, las cuáles aportan grandes 
+            beneficios para la salud.</p>
+            <p>Aunque Murice se aleja del tomate 
+            tradicional, es perfecto para consumir en 
+            ensaladas, guarnición o como aperitivo. 
+            Intenso en su forma y en su fondo, su 
+            interior esconde secretos mágicos.</p>
+                        `,
             en: `
             <strong>Seductive, Vibrant, with Character</strong>
             <p>The Murex sea snail is a mollusk that hides a unique secret. Inside, it holds a substance that dyes what it touches a royal purple color. Cleopatra used it to dye the sails of her ship to flatter Caesar.</p>
@@ -235,10 +254,20 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>Fall in Love Again with Tomatoes!</strong>
-            <p>The Monterosa tomato is incomparable. This new tomato brand is here to stay. Its asymmetrical, flattened, and deeply ribbed shape gives it a delicate and distinctive appearance. The pink color of its ripeness and its intense herbal aroma make it simply irresistible.</p>
-            <p>Juicy and flavorful, the Monterosa Tomato is the perfect combination of taste, texture, shape, and color.</p>
-            `,
+            <strong>¡Reenamórate 
+            del tomate!</strong>
+            <p>El tomate Monterosa no tiene igual. 
+            Esta nueva marca de tomate ha llegado 
+            para quedarse. Su forma asimétrica, 
+            achatada y muy acostillada le otorga 
+            un aspecto delicado y peculiar. El color 
+            rosado de su madurez y su intenso 
+            aroma herbáceo lo hacen simplemente 
+            irresistible. </p>
+            <p>Jugoso y sabroso, el Tomate Monterosa 
+            es la combinación perfecta de sabor, 
+            textura, forma y color</p>
+                        `,
             en: `
             <strong>Fall in Love Again with Tomatoes!</strong>
             <p>The Monterosa tomato is incomparable. This new tomato brand is here to stay. Its asymmetrical, flattened, and deeply ribbed shape gives it a delicate and distinctive appearance. The pink color of its ripeness and its intense herbal aroma make it simply irresistible.</p>
@@ -269,11 +298,11 @@ export const dataTomatesDetalle = {
         },
         description: {
             es: `
-            <strong>The Taste of Yesteryears</strong>
-            <p>The Beef tomato is an ancestral tomato with thick walls, a fleshy and consistent body.</p>
-            <p>A great ally for everyday life.</p>
-            <p>The classic of all time that preserves the best of yesteryears in our homes.</p>
-            `,
+            <strong>El Sabor de Antaño</strong>
+            <p>El tomate Beef es un tomate ancestral con paredes gruesas y un cuerpo carnoso y consistente.</p>
+            <p>Un gran aliado para la vida cotidiana.</p>
+            <p>El clásico de todos los tiempos que conserva lo mejor de antaño en nuestros hogares.</p>
+                        `,
             en: `
             <strong>The Taste of Yesteryears</strong>
             <p>The Beef tomato is an ancestral tomato with thick walls, a fleshy and consistent body.</p>

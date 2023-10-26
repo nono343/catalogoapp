@@ -4,10 +4,11 @@ import { dataTropicalesDetalle } from '../detailCards/dataTropicalesDetalle';
 
 
 import ChirimoyaPackagingTable from '../../components/packagingtables/chirimoyaPackagingTable';
-import CaviarCitricoPackagingTable from '../../components/packagingtables/caviarCitricoPackagingTable';
+import CaviarCitricoPackagingTable from '../../components/packagingtables/caviarcitricoPackagingTable';
 import PitahayaPackagingTable from '../../components/packagingtables/pitahayaPackagingTable';
-import MangoPackagingTable from '../../components/packagingtables/mangoPackagingTable';
 import AguacatePackagingTable from '../../components/packagingtables/aguacatePackagingTable';
+import MiniMangoPackagingTable from '../../components/packagingtables/minimangoPackagingTable';
+import MangoPackagingTable from '../../components/packagingtables/mangoPackagingTable';
 
 
 function TropicalesDetalle({ isSpanish }) {
@@ -47,7 +48,7 @@ function TropicalesDetalle({ isSpanish }) {
 
 
             {productionSchedule && productionSchedule.length > 0 && (
-                <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
+                <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6">
                     <h1 className="sm:text-3xl text-center text-2xl mb-5">
                         {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
                     </h1>
@@ -55,7 +56,7 @@ function TropicalesDetalle({ isSpanish }) {
                         {productionSchedule.map((item, index) => (
                             <a
                                 key={index}
-                                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600`}
+                                className={`relative inline-flex w-1/12 sm:w-1/12 mr-1 h-16 ${item.isRed ? 'bg-red-600' : 'bg-gray-200'} mb-2 flex items-center justify-center text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transform hover:scale-110 transition-transform`} /* Agrega las clases de hover y transform aquí */
                             >
                                 {index + 1}
                             </a>
@@ -67,11 +68,12 @@ function TropicalesDetalle({ isSpanish }) {
             <div className="border-t mx-auto border-gray-200 bg-white px-4 py-3 sm:px-6">
             </div>
             {(nombreCard === 'aguacate_bacon' || nombreCard === 'aguacate_hass' || nombreCard === 'aguacate_fuerte' || nombreCard === 'aguacate_pinkerton') && (<AguacatePackagingTable isSpanish={isSpanish}/>)}
-            {(nombreCard === 'mango_osteen' || nombreCard === 'mango_irwin' || nombreCard === 'mango_keitt' || nombreCard === 'mango_kent' || nombreCard === 'mango_miniirwin') && (<MangoPackagingTable />)}
-            {(nombreCard === 'pitahaya_púrpura' || nombreCard === 'pitahaya_rosa' || nombreCard === 'pitahaya_blanca') && (<PitahayaPackagingTable />)}
+            {(nombreCard === 'mango_osteen' || nombreCard === 'mango_irwin' || nombreCard === 'mango_keitt' || nombreCard === 'mango_kent') && (<MangoPackagingTable isSpanish={isSpanish} />)}
+            {( nombreCard === 'mango_miniirwin') && (<MiniMangoPackagingTable isSpanish={isSpanish} />)}
+            {(nombreCard === 'pitahaya_púrpura' || nombreCard === 'pitahaya_rosa' || nombreCard === 'pitahaya_blanca') && (<PitahayaPackagingTable isSpanish={isSpanish}/>)}
             {(nombreCard === 'chirimoya_fino_de_jete') && (<ChirimoyaPackagingTable />)}
-            {(nombreCard === 'níspora') && (<CaviarCitricoPackagingTable />)}
-            {(nombreCard === 'caviar_cítrico') && (<CaviarCitricoPackagingTable />)}
+            {(nombreCard === 'níspora') && (<CaviarCitricoPackagingTable isSpanish={isSpanish}/>)}
+            {(nombreCard === 'caviar_cítrico') && (<CaviarCitricoPackagingTable isSpanish={isSpanish}/>)}
         </div>
     );
 }
