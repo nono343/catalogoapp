@@ -10,7 +10,7 @@ function Tropicales({ isSpanish }) {
 
   const location = useLocation();
 
-  const selectedTropicalesCards = appCards.slice(30, 44); // Esto mostrará las primeras nueve tarjetas
+  const selectedTropicalesCards = appCards.slice(36, 50); // Esto mostrará las primeras nueve tarjetas
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,7 +19,7 @@ function Tropicales({ isSpanish }) {
 
 
   return (
-    <div className="relative text-center py-16 animate-fade-down">
+    <div className="relative text-center py-5 animate-fade-down">
       <div className="container m-auto px-6 text-gray-500 md:px-12">
         <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
           {isSpanish ? 'Tropicales' : 'Tropical Fruits'}

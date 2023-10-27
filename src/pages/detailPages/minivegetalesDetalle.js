@@ -4,6 +4,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import { dataMinivegetalesDetalle } from '../detailCards/dataMinivegetalesDetalle';
 import MycubiesPackagingTable from '../../components/packagingtables/mycubiesPackagingTable';
 import TribelliPackagingTable from '../../components/packagingtables/tribelliPackagingTable';
+import MinivegetalesparrillaPackagingTable from '../../components/packagingtables/minivegetalesparrillaPackagingTable';
 
 function MinivegetalesDetalle({ isSpanish }) {
     const { nombreCard } = useParams();
@@ -111,7 +112,7 @@ function MinivegetalesDetalle({ isSpanish }) {
             </section>
 
             {productionSchedule && productionSchedule.length > 0 && (
-                <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6">
+                <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6 animate-fade-up">
                     <h1 className="sm:text-3xl text-center text-2xl mb-5">
                         {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
                     </h1>
@@ -132,6 +133,7 @@ function MinivegetalesDetalle({ isSpanish }) {
             </div>
             {nombreCard === 'pepino_cocktail_mycubies' || nombreCard === 'cucumber_snack_mycubies' ? <MycubiesPackagingTable isSpanish={isSpanish} /> : null}
             {nombreCard === 'minipimientos_tribelli' || nombreCard === 'sweet_baby_peppers_tribelli' ? <TribelliPackagingTable isSpanish={isSpanish} /> : null}
+            {nombreCard === 'minivegetales_a_la_parrilla__bbq' || nombreCard === 'miniveggies_oven_roastand_bbq' ? <MinivegetalesparrillaPackagingTable isSpanish={isSpanish} /> : null}
 
         </div>
     );

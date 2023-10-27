@@ -7,7 +7,7 @@ import appCards from '../components/appCards';
 function Tradicionales({isSpanish}) {
     const location = useLocation();
 
-    const selectedTraditionalsCards = appCards.slice(23, 30); // Esto mostrará las primeras nueve tarjetas
+    const selectedTraditionalsCards = appCards.slice(29, 35); // Esto mostrará las primeras nueve tarjetas
   
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ function Tradicionales({isSpanish}) {
   
 
     return (
-        <div className="relative text-center py-16 animate-fade-down">
+        <div className="relative text-center py-5 animate-fade-down">
         <div className="container m-auto px-6 text-gray-500 md:px-12">
           <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
             {isSpanish ? 'Tradicionales' : 'Traditionals'}

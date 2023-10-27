@@ -15,7 +15,7 @@ function Tomates({ isSpanish }) {
   
 
   return (
-    <div className="relative text-center py-16 animate-fade-down">
+    <div className="relative text-center py-5 animate-fade-down">
       <div className="container relative m-auto px-6 text-gray-500 md:px-12">
         <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
           {isSpanish ? 'Tomates' : 'Tomatoes'}

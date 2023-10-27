@@ -53,13 +53,13 @@ function App() {
   useEffect(() => {
     // Agregar el manejador de clics al documento cuando el componente se monta
     document.addEventListener('click', handleDocumentClick);
-  
+
     // Retirar el manejador de clics cuando el componente se desmonta
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
   }, []); // Dependencia vacía para que el efecto se ejecute solo una vez al montar el componente
-  
+
   // Manejador de búsqueda
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -76,7 +76,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App max-w-screen-2xl mx-auto">
+      <div className="App">
         <Navbar isSpanish={isSpanish} toggleLanguage={toggleLanguage} />
         <div ref={searchRef}>
           <Search

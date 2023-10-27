@@ -31,6 +31,8 @@ import cherryperarama from '../assets/cherrypera/rama/rama.jpg';
 import mycubies from '../assets/minivegetales/mycubies/mycubies.jpg';
 import tribelli from '../assets/minivegetales/tribelli/tribelli.jpg';
 import fiesta from '../assets/fiesta/fiesta.jpg';
+import seleccion from '../assets/seleccion/seleccion.jpg';
+
 
 
 import berenjena from '../assets/tradicionales/berenjena/berenjena.jpg';
@@ -257,7 +259,15 @@ const appCards = [
   {
     nombre: {
       es: 'Minivegetales a la parrilla & BBQ',
-      en: 'Miniveggies Oven Roast & BBQ',
+      en: 'Miniveggies Oven Roast and BBQ',
+    },
+    imagen: seleccion,
+  },
+
+  {
+    nombre: {
+      es: 'Fiesta minivegetales',
+      en: 'Miniveggies Fiesta',
     },
     imagen: fiesta,
   },

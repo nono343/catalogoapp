@@ -24,7 +24,7 @@ function VGama() {
 
     return (
         
-        <div className="relative py-16">
+        <div className="relative py-5">
             <div className="container mb-5 relative m-auto px-6 text-gray-500 md:px-12">
                 <h3 className="mb-5 text-gray-600 text-2xl font-bold dark:text-gray-300"> Sopas y cremas</h3>
                 <div className="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-4">

@@ -10,12 +10,16 @@ import { Es } from "react-flags-select";
 
 
 
+
 export default function Navbar({ isSpanish, toggleLanguage }) {
+
+    
+
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 animate-fade-right" aria-label="Global">
+        <header className="bg-white sticky top-0 z-50 mb-5">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8 animate-fade-right" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Granada La Palma SCA</span>
@@ -60,15 +64,15 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
 
                 </Popover.Group>
                 <Switch
-    color='red'
-    checked={isSpanish}
-    label={
-        isSpanish ? 
-        <span style={{ fontSize: '35px' }}><Es/></span> : 
-        <span style={{ fontSize: '35px' }}><Gb/></span>
-    }
-    onChange={toggleLanguage}
-/>
+                    color='red'
+                    checked={isSpanish}
+                    label={
+                        isSpanish ?
+                            <span style={{ fontSize: '35px' }}><Es /></span> :
+                            <span style={{ fontSize: '35px' }}><Gb /></span>
+                    }
+                    onChange={toggleLanguage}
+                />
             </nav>
 
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -92,10 +96,10 @@ export default function Navbar({ isSpanish, toggleLanguage }) {
                             <span className="sr-only">Close menu</span>
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
-                        
+
                     </div>
                     <div className="mt-6 flow-root">
-                        
+
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 <Link

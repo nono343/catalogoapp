@@ -48,7 +48,7 @@ function TomatesDetalle({ isSpanish }) {
       </section>
 
       {productionSchedule && productionSchedule.length > 0 && (
-        <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6">
+        <div className="border-t mx-auto border-gray-200 bg-white px-10 py-10 sm:px-6 animate-fade-up">
           <h1 className="sm:text-3xl text-center text-2xl mb-5">
             {isSpanish ? 'Calendario de producción' : 'Production Schedule'}
           </h1>

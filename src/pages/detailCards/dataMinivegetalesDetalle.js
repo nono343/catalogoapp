@@ -74,4 +74,55 @@ export const dataMinivegetalesDetalle = {
 
     },
 
+    minivegetales_a_la_parrilla__bbq: {
+        name: {
+            es: 'Minivegetales a la parrilla & BBQ',
+            en: 'Miniveggies Oven Roast & BBQ',
+                    },
+        description: {
+            es: `
+            <strong>Consejos de cocina
+            </strong>
+            <p>1. Añadir aceite de oliva virgen extra.</p>
+            <p>2. Añadir hierbas provenzales y sal.
+            </p>
+            <p>3. Cocinar durante 20 minutos 
+            a 220º C en un horno precalentado o a la 
+            parrilla durante 20 minutos.
+            </p>
+            `,
+            en: `
+            <strong>Cooking tips
+            </strong>
+            <p>1. Add extra virgin olive oil.</p>
+            <p>2. Add provencal herbs and salt.
+            </p>
+            <p>3. Preheated oven about 20 
+            minutes at 220º C or grill about 
+            20 minutes.
+            </p>
+
+            `,        
+        },
+        image: tribelli,
+        image1: mycubies,
+
+        productionSchedule: [
+            { isRed: true },  //enero
+            { isRed: true },  //febrero
+            { isRed: true },  //marzo
+            { isRed: true },  //abril
+            { isRed: true },  //mayo
+            { isRed: true },  //junio
+            { isRed: true },  //julio
+            { isRed: true },  //agosto
+            { isRed: true },  //septiembre
+            { isRed: true },  //octubre
+            { isRed: true },  //noviembre
+            { isRed: true },  //diciembre
+        ],
+
+    },
+
+
 };

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Input } from "@material-tailwind/react";
-import AmelaDataPackaging from './datatable/amelaDataPackaging';
+import MinivegetalesparrillaDataPackaging from './datatable/minivegetalesparrillaDataPackaging';
 
-function AmelaPackagingTable({ isSpanish }) {
+
+function MinivegetalesparrillaPackagingTable({ isSpanish }) {
     const [products, setProducts] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
     const [searchTerm, setSearchTerm] = useState('');
-    const [amelaData, setAmelaData] = useState(null);
+    const [minivegetalesparrillaData, setMinivegetalesparrillaData] = useState(null);
     const [filter, setFilter] = useState(''); // Estado para el filtro
     const [selectedFilter, setSelectedFilter] = useState(""); // Estado para el filtro seleccionado
     const [isImageEnlarged, setIsImageEnlarged] = useState(false);
@@ -16,21 +17,21 @@ function AmelaPackagingTable({ isSpanish }) {
     useEffect(() => {
         // Este efecto solo debe ejecutarse una vez cuando se monta el componente
         // Obtén los datos del producto "amela" desde productData y configúralos en el estado
-        const amelaProductData = AmelaDataPackaging(isSpanish).Packaging;
-        setAmelaData(amelaProductData);
+        const minivegetalesparrillaProductData = MinivegetalesparrillaDataPackaging(isSpanish).Packaging;
+        setMinivegetalesparrillaData(minivegetalesparrillaProductData);
     }, [isSpanish]);
-    
+
     useEffect(() => {
-        // Este efecto actualiza la lista de productos cuando cambia amelaData o isSpanish
-        if (amelaData && typeof amelaData === 'object') {
-            const dataArray = Object.keys(amelaData).map(key => ({
+        // Este efecto actualiza la lista de productos cuando cambia minivegetalesparrillaData o isSpanish
+        if (minivegetalesparrillaData && typeof minivegetalesparrillaData === 'object') {
+            const dataArray = Object.keys(minivegetalesparrillaData).map(key => ({
                 key: key,
-                value: amelaData[key]
+                value: minivegetalesparrillaData[key]
             }));
             setProducts(dataArray);
         }
-    }, [amelaData, isSpanish]);
-    
+    }, [minivegetalesparrillaData, isSpanish]);
+
     const handleSort = (column) => {
         const sortOrderToggle = sortOrder === 'asc' ? 'desc' : 'asc';
 
@@ -210,4 +211,4 @@ function AmelaPackagingTable({ isSpanish }) {
     );
 }
 
-export default AmelaPackagingTable
+export default MinivegetalesparrillaPackagingTable

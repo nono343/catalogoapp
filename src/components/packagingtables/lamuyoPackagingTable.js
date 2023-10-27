@@ -95,7 +95,7 @@ function LamuyoPackagingTable() {
   
   
       return (
-        <section className="body-font mb-5 max-w-screen-2xl mx-auto">
+        <section className="body-font mb-5 px-12 max-w-screen-2xl mx-auto">
         <h1 className="sm:text-3xl text-center text-2xl mb-5 animate-fade-up">Formatos de venta</h1>
         <div className='container max-w-screen-sm relative m-auto text-center px-6 text-gray-500 md:px-12 mb-5 animate-fade-up'>
             <div className="relative">
